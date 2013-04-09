@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA241D361714D4C500BCC84A /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA241D351714D4C500BCC84A /* MainViewController.xib */; };
+		FA241D381714D4F600BCC84A /* MoviesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA241D371714D4F600BCC84A /* MoviesViewController.xib */; };
+		FA2CC7611714CFBB00DDEFC4 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2CC7601714CFBB00DDEFC4 /* MoviesViewController.m */; };
 		FA395A101714040D00558196 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA395A0F1714040D00558196 /* UIKit.framework */; };
 		FA395A121714040D00558196 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA395A111714040D00558196 /* Foundation.framework */; };
 		FA395A141714040D00558196 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA395A131714040D00558196 /* CoreGraphics.framework */; };
@@ -16,9 +19,25 @@
 		FA395A221714040D00558196 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FA395A211714040D00558196 /* Default.png */; };
 		FA395A241714040D00558196 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA395A231714040D00558196 /* Default@2x.png */; };
 		FA395A261714040D00558196 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA395A251714040D00558196 /* Default-568h@2x.png */; };
+		FA395A2F171404C400558196 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A2D171404C400558196 /* MainViewController.m */; };
+		FA395A4617140AB700558196 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A3317140AB500558196 /* SBJsonParser.m */; };
+		FA395A4717140AB700558196 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A3517140AB500558196 /* SBJsonStreamParser.m */; };
+		FA395A4817140AB700558196 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A3717140AB500558196 /* SBJsonStreamParserAccumulator.m */; };
+		FA395A4917140AB700558196 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A3917140AB500558196 /* SBJsonStreamParserAdapter.m */; };
+		FA395A4A17140AB700558196 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A3B17140AB600558196 /* SBJsonStreamParserState.m */; };
+		FA395A4B17140AB700558196 /* SBJsonStreamTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A3D17140AB600558196 /* SBJsonStreamTokeniser.m */; };
+		FA395A4C17140AB700558196 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A3F17140AB600558196 /* SBJsonStreamWriter.m */; };
+		FA395A4D17140AB700558196 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A4117140AB600558196 /* SBJsonStreamWriterAccumulator.m */; };
+		FA395A4E17140AB700558196 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A4317140AB600558196 /* SBJsonStreamWriterState.m */; };
+		FA395A4F17140AB700558196 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A4517140AB700558196 /* SBJsonWriter.m */; };
+		FA395A5317140B5A00558196 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A5217140B5900558196 /* Movie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA241D351714D4C500BCC84A /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		FA241D371714D4F600BCC84A /* MoviesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoviesViewController.xib; sourceTree = "<group>"; };
+		FA2CC75F1714CFBB00DDEFC4 /* MoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
+		FA2CC7601714CFBB00DDEFC4 /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		FA395A0C1714040D00558196 /* GoToCinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoToCinema.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA395A0F1714040D00558196 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FA395A111714040D00558196 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -32,6 +51,31 @@
 		FA395A211714040D00558196 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		FA395A231714040D00558196 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FA395A251714040D00558196 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FA395A2C171404C400558196 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		FA395A2D171404C400558196 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		FA395A3117140AB500558196 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		FA395A3217140AB500558196 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		FA395A3317140AB500558196 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		FA395A3417140AB500558196 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		FA395A3517140AB500558196 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		FA395A3617140AB500558196 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		FA395A3717140AB500558196 /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		FA395A3817140AB500558196 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		FA395A3917140AB500558196 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		FA395A3A17140AB600558196 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		FA395A3B17140AB600558196 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		FA395A3C17140AB600558196 /* SBJsonStreamTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamTokeniser.h; sourceTree = "<group>"; };
+		FA395A3D17140AB600558196 /* SBJsonStreamTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamTokeniser.m; sourceTree = "<group>"; };
+		FA395A3E17140AB600558196 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		FA395A3F17140AB600558196 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		FA395A4017140AB600558196 /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		FA395A4117140AB600558196 /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		FA395A4217140AB600558196 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		FA395A4317140AB600558196 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		FA395A4417140AB700558196 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		FA395A4517140AB700558196 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		FA395A5117140B5900558196 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		FA395A5217140B5900558196 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +124,15 @@
 			children = (
 				FA395A1E1714040D00558196 /* AppDelegate.h */,
 				FA395A1F1714040D00558196 /* AppDelegate.m */,
+				FA395A5117140B5900558196 /* Movie.h */,
+				FA395A5217140B5900558196 /* Movie.m */,
+				FA395A2C171404C400558196 /* MainViewController.h */,
+				FA395A2D171404C400558196 /* MainViewController.m */,
+				FA241D351714D4C500BCC84A /* MainViewController.xib */,
+				FA2CC75F1714CFBB00DDEFC4 /* MoviesViewController.h */,
+				FA2CC7601714CFBB00DDEFC4 /* MoviesViewController.m */,
+				FA241D371714D4F600BCC84A /* MoviesViewController.xib */,
+				FA395A5017140ABE00558196 /* Resources */,
 				FA395A161714040D00558196 /* Supporting Files */,
 			);
 			path = GoToCinema;
@@ -97,6 +150,34 @@
 				FA395A251714040D00558196 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA395A5017140ABE00558196 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA395A3117140AB500558196 /* SBJson.h */,
+				FA395A3217140AB500558196 /* SBJsonParser.h */,
+				FA395A3317140AB500558196 /* SBJsonParser.m */,
+				FA395A3417140AB500558196 /* SBJsonStreamParser.h */,
+				FA395A3517140AB500558196 /* SBJsonStreamParser.m */,
+				FA395A3617140AB500558196 /* SBJsonStreamParserAccumulator.h */,
+				FA395A3717140AB500558196 /* SBJsonStreamParserAccumulator.m */,
+				FA395A3817140AB500558196 /* SBJsonStreamParserAdapter.h */,
+				FA395A3917140AB500558196 /* SBJsonStreamParserAdapter.m */,
+				FA395A3A17140AB600558196 /* SBJsonStreamParserState.h */,
+				FA395A3B17140AB600558196 /* SBJsonStreamParserState.m */,
+				FA395A3C17140AB600558196 /* SBJsonStreamTokeniser.h */,
+				FA395A3D17140AB600558196 /* SBJsonStreamTokeniser.m */,
+				FA395A3E17140AB600558196 /* SBJsonStreamWriter.h */,
+				FA395A3F17140AB600558196 /* SBJsonStreamWriter.m */,
+				FA395A4017140AB600558196 /* SBJsonStreamWriterAccumulator.h */,
+				FA395A4117140AB600558196 /* SBJsonStreamWriterAccumulator.m */,
+				FA395A4217140AB600558196 /* SBJsonStreamWriterState.h */,
+				FA395A4317140AB600558196 /* SBJsonStreamWriterState.m */,
+				FA395A4417140AB700558196 /* SBJsonWriter.h */,
+				FA395A4517140AB700558196 /* SBJsonWriter.m */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +235,8 @@
 				FA395A221714040D00558196 /* Default.png in Resources */,
 				FA395A241714040D00558196 /* Default@2x.png in Resources */,
 				FA395A261714040D00558196 /* Default-568h@2x.png in Resources */,
+				FA241D361714D4C500BCC84A /* MainViewController.xib in Resources */,
+				FA241D381714D4F600BCC84A /* MoviesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +249,19 @@
 			files = (
 				FA395A1C1714040D00558196 /* main.m in Sources */,
 				FA395A201714040D00558196 /* AppDelegate.m in Sources */,
+				FA395A2F171404C400558196 /* MainViewController.m in Sources */,
+				FA395A4617140AB700558196 /* SBJsonParser.m in Sources */,
+				FA395A4717140AB700558196 /* SBJsonStreamParser.m in Sources */,
+				FA395A4817140AB700558196 /* SBJsonStreamParserAccumulator.m in Sources */,
+				FA395A4917140AB700558196 /* SBJsonStreamParserAdapter.m in Sources */,
+				FA395A4A17140AB700558196 /* SBJsonStreamParserState.m in Sources */,
+				FA395A4B17140AB700558196 /* SBJsonStreamTokeniser.m in Sources */,
+				FA395A4C17140AB700558196 /* SBJsonStreamWriter.m in Sources */,
+				FA395A4D17140AB700558196 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				FA395A4E17140AB700558196 /* SBJsonStreamWriterState.m in Sources */,
+				FA395A4F17140AB700558196 /* SBJsonWriter.m in Sources */,
+				FA395A5317140B5A00558196 /* Movie.m in Sources */,
+				FA2CC7611714CFBB00DDEFC4 /* MoviesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +376,7 @@
 				FA395A2B1714040D00558196 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
