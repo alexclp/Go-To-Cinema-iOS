@@ -10,6 +10,7 @@
 #import "SBJson.h"
 #import "MoviesViewController.h"
 #import "Movie.h"
+#import "LocationTimeOptionViewController.h"
 
 @interface MainViewController ()
 
@@ -65,6 +66,12 @@
 	mvc.arrayWithMovies = [[NSArray alloc] initWithArray:[self createArrayOfMoviesFromRawData:self.rawData]];
 }
 
+- (IBAction)setTimeAndLocation:(UIButton *)button
+{
+	LocationTimeOptionViewController *vc = [[LocationTimeOptionViewController alloc] init];
+	[self.navigationController pushViewController:vc animated:YES];
+}
+
 #pragma mark view methods
 
 - (void)viewDidLoad
@@ -72,7 +79,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.rawData = [self parseRawDataFromURL:[NSURL URLWithString:@"http://warm-eyrie-7268.herokuapp.com/date.json"]];
-	self.title = @"Choose action";
+	self.title = @"Action";
 }
 
 - (void)didReceiveMemoryWarning

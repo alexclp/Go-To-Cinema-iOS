@@ -13,5 +13,7 @@
 @property (strong, nonatomic) NSArray *rawData;
 
 - (IBAction)seeMovies:(UIButton *)button;
+- (IBAction)setTimeAndLocation:(UIButton *)button;
+
 
 @end

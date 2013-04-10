@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		FA241D361714D4C500BCC84A /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA241D351714D4C500BCC84A /* MainViewController.xib */; };
 		FA241D381714D4F600BCC84A /* MoviesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA241D371714D4F600BCC84A /* MoviesViewController.xib */; };
+		FA241D3B1715667D00BCC84A /* CustomCellSuper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA241D3A1715667D00BCC84A /* CustomCellSuper.m */; };
+		FA241D3E1715669200BCC84A /* MovieCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA241D3D1715669200BCC84A /* MovieCustomCell.m */; };
+		FA241D401715669D00BCC84A /* MovieCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA241D3F1715669D00BCC84A /* MovieCustomCell.xib */; };
 		FA2CC7611714CFBB00DDEFC4 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2CC7601714CFBB00DDEFC4 /* MoviesViewController.m */; };
 		FA395A101714040D00558196 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA395A0F1714040D00558196 /* UIKit.framework */; };
 		FA395A121714040D00558196 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA395A111714040D00558196 /* Foundation.framework */; };
@@ -31,11 +34,23 @@
 		FA395A4E17140AB700558196 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A4317140AB600558196 /* SBJsonStreamWriterState.m */; };
 		FA395A4F17140AB700558196 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A4517140AB700558196 /* SBJsonWriter.m */; };
 		FA395A5317140B5A00558196 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A5217140B5900558196 /* Movie.m */; };
+		FAC5B47417156C99008C7828 /* SortOptionsModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC5B47217156C99008C7828 /* SortOptionsModalViewController.m */; };
+		FAC5B47517156C99008C7828 /* SortOptionsModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC5B47317156C99008C7828 /* SortOptionsModalViewController.xib */; };
+		FAC5B4831715D962008C7828 /* LocationTimeOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC5B4811715D962008C7828 /* LocationTimeOptionViewController.m */; };
+		FAC5B4841715D962008C7828 /* LocationTimeOptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC5B4821715D962008C7828 /* LocationTimeOptionViewController.xib */; };
+		FAC5B4861715DAE4008C7828 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5B4851715DAE4008C7828 /* CoreLocation.framework */; };
+		FAC5B4881715DD8F008C7828 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5B4871715DD8F008C7828 /* MapKit.framework */; };
+		FAC5B48C17160E74008C7828 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC5B48B17160E73008C7828 /* MainWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA241D351714D4C500BCC84A /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		FA241D371714D4F600BCC84A /* MoviesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoviesViewController.xib; sourceTree = "<group>"; };
+		FA241D391715667D00BCC84A /* CustomCellSuper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellSuper.h; sourceTree = "<group>"; };
+		FA241D3A1715667D00BCC84A /* CustomCellSuper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellSuper.m; sourceTree = "<group>"; };
+		FA241D3C1715669200BCC84A /* MovieCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCustomCell.h; sourceTree = "<group>"; };
+		FA241D3D1715669200BCC84A /* MovieCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCustomCell.m; sourceTree = "<group>"; };
+		FA241D3F1715669D00BCC84A /* MovieCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCustomCell.xib; sourceTree = "<group>"; };
 		FA2CC75F1714CFBB00DDEFC4 /* MoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
 		FA2CC7601714CFBB00DDEFC4 /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		FA395A0C1714040D00558196 /* GoToCinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoToCinema.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +91,15 @@
 		FA395A4517140AB700558196 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		FA395A5117140B5900558196 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		FA395A5217140B5900558196 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		FAC5B47117156C99008C7828 /* SortOptionsModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortOptionsModalViewController.h; sourceTree = "<group>"; };
+		FAC5B47217156C99008C7828 /* SortOptionsModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortOptionsModalViewController.m; sourceTree = "<group>"; };
+		FAC5B47317156C99008C7828 /* SortOptionsModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SortOptionsModalViewController.xib; sourceTree = "<group>"; };
+		FAC5B4801715D961008C7828 /* LocationTimeOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTimeOptionViewController.h; sourceTree = "<group>"; };
+		FAC5B4811715D962008C7828 /* LocationTimeOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTimeOptionViewController.m; sourceTree = "<group>"; };
+		FAC5B4821715D962008C7828 /* LocationTimeOptionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationTimeOptionViewController.xib; sourceTree = "<group>"; };
+		FAC5B4851715DAE4008C7828 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FAC5B4871715DD8F008C7828 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FAC5B48B17160E73008C7828 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC5B4881715DD8F008C7828 /* MapKit.framework in Frameworks */,
+				FAC5B4861715DAE4008C7828 /* CoreLocation.framework in Frameworks */,
 				FA395A101714040D00558196 /* UIKit.framework in Frameworks */,
 				FA395A121714040D00558196 /* Foundation.framework in Frameworks */,
 				FA395A141714040D00558196 /* CoreGraphics.framework in Frameworks */,
@@ -92,6 +118,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA241D41171566A300BCC84A /* MovieCustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA241D391715667D00BCC84A /* CustomCellSuper.h */,
+				FA241D3A1715667D00BCC84A /* CustomCellSuper.m */,
+				FA241D3C1715669200BCC84A /* MovieCustomCell.h */,
+				FA241D3D1715669200BCC84A /* MovieCustomCell.m */,
+				FA241D3F1715669D00BCC84A /* MovieCustomCell.xib */,
+			);
+			name = MovieCustomCell;
+			sourceTree = "<group>";
+		};
 		FA395A031714040C00558196 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +150,8 @@
 		FA395A0E1714040D00558196 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAC5B4871715DD8F008C7828 /* MapKit.framework */,
+				FAC5B4851715DAE4008C7828 /* CoreLocation.framework */,
 				FA395A0F1714040D00558196 /* UIKit.framework */,
 				FA395A111714040D00558196 /* Foundation.framework */,
 				FA395A131714040D00558196 /* CoreGraphics.framework */,
@@ -124,6 +164,7 @@
 			children = (
 				FA395A1E1714040D00558196 /* AppDelegate.h */,
 				FA395A1F1714040D00558196 /* AppDelegate.m */,
+				FAC5B48B17160E73008C7828 /* MainWindow.xib */,
 				FA395A5117140B5900558196 /* Movie.h */,
 				FA395A5217140B5900558196 /* Movie.m */,
 				FA395A2C171404C400558196 /* MainViewController.h */,
@@ -132,6 +173,12 @@
 				FA2CC75F1714CFBB00DDEFC4 /* MoviesViewController.h */,
 				FA2CC7601714CFBB00DDEFC4 /* MoviesViewController.m */,
 				FA241D371714D4F600BCC84A /* MoviesViewController.xib */,
+				FAC5B47117156C99008C7828 /* SortOptionsModalViewController.h */,
+				FAC5B47217156C99008C7828 /* SortOptionsModalViewController.m */,
+				FAC5B47317156C99008C7828 /* SortOptionsModalViewController.xib */,
+				FAC5B4801715D961008C7828 /* LocationTimeOptionViewController.h */,
+				FAC5B4811715D962008C7828 /* LocationTimeOptionViewController.m */,
+				FAC5B4821715D962008C7828 /* LocationTimeOptionViewController.xib */,
 				FA395A5017140ABE00558196 /* Resources */,
 				FA395A161714040D00558196 /* Supporting Files */,
 			);
@@ -153,6 +200,15 @@
 			sourceTree = "<group>";
 		};
 		FA395A5017140ABE00558196 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA241D41171566A300BCC84A /* MovieCustomCell */,
+				FAC5B4701715672F008C7828 /* JSON Parser */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FAC5B4701715672F008C7828 /* JSON Parser */ = {
 			isa = PBXGroup;
 			children = (
 				FA395A3117140AB500558196 /* SBJson.h */,
@@ -177,7 +233,7 @@
 				FA395A4417140AB700558196 /* SBJsonWriter.h */,
 				FA395A4517140AB700558196 /* SBJsonWriter.m */,
 			);
-			name = Resources;
+			name = "JSON Parser";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +293,10 @@
 				FA395A261714040D00558196 /* Default-568h@2x.png in Resources */,
 				FA241D361714D4C500BCC84A /* MainViewController.xib in Resources */,
 				FA241D381714D4F600BCC84A /* MoviesViewController.xib in Resources */,
+				FA241D401715669D00BCC84A /* MovieCustomCell.xib in Resources */,
+				FAC5B47517156C99008C7828 /* SortOptionsModalViewController.xib in Resources */,
+				FAC5B4841715D962008C7828 /* LocationTimeOptionViewController.xib in Resources */,
+				FAC5B48C17160E74008C7828 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +322,10 @@
 				FA395A4F17140AB700558196 /* SBJsonWriter.m in Sources */,
 				FA395A5317140B5A00558196 /* Movie.m in Sources */,
 				FA2CC7611714CFBB00DDEFC4 /* MoviesViewController.m in Sources */,
+				FA241D3B1715667D00BCC84A /* CustomCellSuper.m in Sources */,
+				FA241D3E1715669200BCC84A /* MovieCustomCell.m in Sources */,
+				FAC5B47417156C99008C7828 /* SortOptionsModalViewController.m in Sources */,
+				FAC5B4831715D962008C7828 /* LocationTimeOptionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +405,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GoToCinema/GoToCinema-Prefix.pch";
 				INFOPLIST_FILE = "GoToCinema/GoToCinema-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -352,6 +417,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GoToCinema/GoToCinema-Prefix.pch";
 				INFOPLIST_FILE = "GoToCinema/GoToCinema-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

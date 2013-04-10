@@ -8,6 +8,8 @@
 
 #import "MoviesViewController.h"
 #import "Movie.h"
+#import "MovieCustomCell.h"
+#import "SortOptionsModalViewController.h"
 
 @interface MoviesViewController ()
 
@@ -41,20 +43,30 @@
 
 - (UITableView *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	UITableViewCell *cell = nil;
-    static NSString *identifier = @"cell";
-	
-    cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
+	static NSString *CellIdentifier = @"Movie Cell";
+    
+    MovieCustomCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
-	}
+        cell = (MovieCustomCell *)[MovieCustomCell cellFromNibNamed:@"MovieCustomCell"];
+    }
 	
 	Movie *movie = [[Movie alloc] init];
 	movie = [self.arrayWithMovies objectAtIndex:indexPath.row];
-	cell.textLabel.text = movie.englishTitle;
+	
+	cell.englishNameLabel.text = movie.englishTitle;
+	cell.romanianNameLabel.text = movie.romanianTitle;
+	cell.timeLabel.text = movie.time;
 	
 	return cell;
 
+}
+
+- (void)sortItems
+{	
+	SortOptionsModalViewController *sovc = [[SortOptionsModalViewController alloc] initWithNibName:@"SortOptionsModalViewController" bundle:nil];
+//	sovc.delegate = self;
+	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:sovc];
+	[self presentViewController:navigationController animated:YES completion:nil];
 }
 
 - (void)viewDidLoad
@@ -62,6 +74,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 	self.title = @"Movies";
+	UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithTitle:@"Sort" style:UIBarButtonItemStylePlain target:self action:@selector(sortItems)];
+	self.navigationItem.rightBarButtonItem = sortButton;
 }
 
 - (void)didReceiveMemoryWarning
