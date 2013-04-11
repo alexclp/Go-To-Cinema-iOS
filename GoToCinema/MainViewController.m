@@ -19,6 +19,7 @@
 @implementation MainViewController
 
 @synthesize rawData;
+@synthesize locationManager;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -72,7 +73,35 @@
 	[self.navigationController pushViewController:vc animated:YES];
 }
 
+#pragma mark location
+
+- (void)updateDeviceLocation
+{
+	NSString *latitude = [NSString stringWithFormat:@"%f", self.locationManager.location.coordinate.latitude];
+	NSString *longitude = [NSString stringWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
+	
+	self.currentLocation.text = [NSString stringWithFormat:@"latitude = %@\nlongitude = %@\n", latitude, longitude];
+	
+}
+
 #pragma mark view methods
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	self.locationManager = [[CLLocationManager alloc] init];
+	self.locationManager.distanceFilter = kCLDistanceFilterNone;
+	self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+	[self.locationManager startUpdatingLocation];
+	
+	[super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[self updateDeviceLocation];
+	
+	[super viewDidAppear:animated];
+}
 
 - (void)viewDidLoad
 {
@@ -80,6 +109,11 @@
     // Do any additional setup after loading the view from its nib.
 	self.rawData = [self parseRawDataFromURL:[NSURL URLWithString:@"http://warm-eyrie-7268.herokuapp.com/date.json"]];
 	self.title = @"Action";
+	
+	self.currentTime.text = [NSString stringWithFormat:@"%@", [NSDate date]];
+	
+	
+	[self updateDeviceLocation];
 }
 
 - (void)didReceiveMemoryWarning

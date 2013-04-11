@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import	<CoreLocation/CoreLocation.h>
 
 @interface MainViewController : UIViewController
 
@@ -14,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentLocation;
 
 @property (strong, nonatomic) NSArray *rawData;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 - (IBAction)seeMovies:(UIButton *)button;
 - (IBAction)setTimeAndLocation:(UIButton *)button;
