@@ -53,7 +53,8 @@
         cell = (MovieCustomCell *)[MovieCustomCell cellFromNibNamed:@"MovieCustomCell"];
     }
 	
-	NSString *currentDate = [NSString stringWithString:[self.arrayWithDates objectAtIndex:indexPath.row]];
+	NSDate *currentDate = [self.arrayWithDates objectAtIndex:indexPath.row];
+	NSLog(@"current date = %@", currentDate);
 	Movie *currentMovie = [self.dictionaryDateMovie objectForKey:currentDate];
 	cell.englishNameLabel.text = currentMovie.englishTitle;
 	cell.romanianNameLabel.text = currentMovie.romanianTitle;
@@ -75,9 +76,28 @@
 {
 	NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
 	self.arrayWithDates = [[NSMutableArray alloc] init];
+	NSDate *date = [[NSDate alloc] init];
+	
+	/*
+	 NSString *dateString = @"01-02-2010";
+	 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	 // this is imporant - we set our input date format to match our input string
+	 // if format doesn't match you'll get nil from your string, so be careful
+	 [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+	 NSDate *dateFromString = [[NSDate alloc] init];
+	 // voila!
+	 dateFromString = [dateFormatter dateFromString:dateString];
+	 [dateFormatter release];
+	 
+	 */
+	
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"HH:mm"];
 	for (Movie *movie in array) {
-		[self.arrayWithDates addObject:movie.time];
-		[dictionary setObject:movie forKey:movie.time];
+		date = [dateFormatter dateFromString:movie.time];
+		[self.arrayWithDates addObject:date];
+//		[dictionary setObject:movie forKey:movie.time];
+		[dictionary setObject:movie forKey:date];
 	}
 	return dictionary;
 }

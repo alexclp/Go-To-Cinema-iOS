@@ -8,6 +8,7 @@
 
 #import "SortOptionsModalViewController.h"
 #import "MoviesViewController.h"
+#import "Movie.h"
 
 @interface SortOptionsModalViewController ()
 
@@ -39,8 +40,9 @@
 {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 	if (indexPath.row == 0) {
-		[self.moviesControlller.arrayWithDates sortUsingSelector:@selector(compare:)];
-		NSLog(@"array with dates = %@", self.moviesControlller.arrayWithDates);
+		NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES];
+//		[self.moviesControlller.arrayWithDates sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+		[self.moviesControlller.arrayWithMovies sortedArrayUsingSelector:@selector(localizedCompare:)];
 		[self.moviesControlller.tableView reloadData];
 	} else if (indexPath.row == 1) {
 		
@@ -65,6 +67,7 @@
 	
 	return cell;
 }
+
 
 #pragma mark View lifecycle
 
