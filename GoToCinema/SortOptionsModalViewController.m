@@ -7,6 +7,7 @@
 //
 
 #import "SortOptionsModalViewController.h"
+#import "MoviesViewController.h"
 
 @interface SortOptionsModalViewController ()
 
@@ -37,6 +38,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+	if (indexPath.row == 0) {
+		[self.moviesControlller.arrayWithDates sortUsingSelector:@selector(compare:)];
+		NSLog(@"array with dates = %@", self.moviesControlller.arrayWithDates);
+		[self.moviesControlller.tableView reloadData];
+	} else if (indexPath.row == 1) {
+		
+	}
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (UITableView *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -64,7 +73,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.title = @"Sort options";
-	UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonSystemItemCancel target:self action:@selector(dismissModalViewControllerAnimated:)];
+	self.moviesControlller = [[MoviesViewController alloc] initWithNibName:@"MoviesViewController" bundle:nil];
+//	UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonSystemItemCancel target:self action:@selector(dismissModalViewControllerAnimated:)];
+	UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissViewControllerAnimated:completion:)];
 	self.navigationItem.rightBarButtonItem = cancelButton;
 }
 

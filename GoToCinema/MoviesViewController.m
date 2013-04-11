@@ -1,3 +1,4 @@
+
 //
 //  MoviesViewController.m
 //  GoToCinema
@@ -19,6 +20,8 @@
 
 @synthesize arrayWithMovies;
 @synthesize tableView;
+@synthesize dictionaryDateMovie;
+@synthesize arrayWithDates;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -50,12 +53,11 @@
         cell = (MovieCustomCell *)[MovieCustomCell cellFromNibNamed:@"MovieCustomCell"];
     }
 	
-	Movie *movie = [[Movie alloc] init];
-	movie = [self.arrayWithMovies objectAtIndex:indexPath.row];
-	
-	cell.englishNameLabel.text = movie.englishTitle;
-	cell.romanianNameLabel.text = movie.romanianTitle;
-	cell.timeLabel.text = movie.time;
+	NSString *currentDate = [NSString stringWithString:[self.arrayWithDates objectAtIndex:indexPath.row]];
+	Movie *currentMovie = [self.dictionaryDateMovie objectForKey:currentDate];
+	cell.englishNameLabel.text = currentMovie.englishTitle;
+	cell.romanianNameLabel.text = currentMovie.romanianTitle;
+	cell.timeLabel.text = currentMovie.time;
 	
 	return cell;
 
@@ -69,11 +71,23 @@
 	[self presentViewController:navigationController animated:YES completion:nil];
 }
 
+- (NSMutableDictionary *)createDictionaryFromMoviesArray:(NSArray *)array
+{
+	NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+	self.arrayWithDates = [[NSMutableArray alloc] init];
+	for (Movie *movie in array) {
+		[self.arrayWithDates addObject:movie.time];
+		[dictionary setObject:movie forKey:movie.time];
+	}
+	return dictionary;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 	self.title = @"Movies";
+	self.dictionaryDateMovie = [self createDictionaryFromMoviesArray:self.arrayWithMovies];
 	UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithTitle:@"Sort" style:UIBarButtonItemStylePlain target:self action:@selector(sortItems)];
 	self.navigationItem.rightBarButtonItem = sortButton;
 }

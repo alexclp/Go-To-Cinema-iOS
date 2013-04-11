@@ -62,8 +62,8 @@
 - (IBAction)seeMovies:(UIButton *)button
 {
 	MoviesViewController *mvc = [[MoviesViewController alloc] init];
-	[self.navigationController pushViewController:mvc animated:YES];
 	mvc.arrayWithMovies = [[NSArray alloc] initWithArray:[self createArrayOfMoviesFromRawData:self.rawData]];
+	[self.navigationController pushViewController:mvc animated:YES];
 }
 
 - (IBAction)setTimeAndLocation:(UIButton *)button

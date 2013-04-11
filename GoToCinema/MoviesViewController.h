@@ -12,5 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *arrayWithMovies;
+@property (strong, nonatomic) NSMutableDictionary *dictionaryDateMovie;
+@property (strong, nonatomic) NSMutableArray  *arrayWithDates;
 
 @end
