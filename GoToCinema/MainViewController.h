@@ -10,6 +10,9 @@
 
 @interface MainViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *currentTime;
+@property (weak, nonatomic) IBOutlet UILabel *currentLocation;
+
 @property (strong, nonatomic) NSArray *rawData;
 
 - (IBAction)seeMovies:(UIButton *)button;
