@@ -410,7 +410,7 @@
 				GCC_PREFIX_HEADER = "GoToCinema/GoToCinema-Prefix.pch";
 				INFOPLIST_FILE = "GoToCinema/GoToCinema-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -427,7 +427,7 @@
 				GCC_PREFIX_HEADER = "GoToCinema/GoToCinema-Prefix.pch";
 				INFOPLIST_FILE = "GoToCinema/GoToCinema-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
