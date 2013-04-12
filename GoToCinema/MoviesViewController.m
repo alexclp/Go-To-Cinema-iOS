@@ -70,14 +70,7 @@ NSInteger dateSort(id num1, id num2, void *context)
 	[dateFormatter setDateFormat:@"HH:mm"];
 	NSDate *v1 = [dateFormatter dateFromString:movie1.time];
 	NSDate *v2 = [dateFormatter dateFromString:movie2.time];
-	/*
-    if (v1 < v2)
-        return NSOrderedAscending;
-    else if (v1 > v2)
-        return NSOrderedDescending;
-    else
-        return NSOrderedSame;
-	 */
+	
 	return [v1 compare:v2];
 }
 
