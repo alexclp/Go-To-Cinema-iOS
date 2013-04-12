@@ -54,7 +54,6 @@
     }
 	
 	NSDate *currentDate = [self.arrayWithDates objectAtIndex:indexPath.row];
-	NSLog(@"current date = %@", currentDate);
 	Movie *currentMovie = [self.dictionaryDateMovie objectForKey:currentDate];
 	cell.englishNameLabel.text = currentMovie.englishTitle;
 	cell.romanianNameLabel.text = currentMovie.romanianTitle;
@@ -65,11 +64,21 @@
 }
 
 - (void)sortItems
-{	
+{	/*
 	SortOptionsModalViewController *sovc = [[SortOptionsModalViewController alloc] initWithNibName:@"SortOptionsModalViewController" bundle:nil];
 //	sovc.delegate = self;
+	NSLog(@"array = %@", self.arrayWithDates);
 	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:sovc];
 	[self presentViewController:navigationController animated:YES completion:nil];
+	 */
+	
+	NSDate *currentDate = [NSDate date];
+	 
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"self" ascending:YES];
+	NSArray *descriptors = [NSArray arrayWithObject:sortDescriptor];
+
+	self.arrayWithDates = [self.arrayWithDates sortedArrayUsingDescriptors:descriptors];
+	[self.tableView reloadData];
 }
 
 - (NSMutableDictionary *)createDictionaryFromMoviesArray:(NSArray *)array
@@ -77,19 +86,6 @@
 	NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
 	self.arrayWithDates = [[NSMutableArray alloc] init];
 	NSDate *date = [[NSDate alloc] init];
-	
-	/*
-	 NSString *dateString = @"01-02-2010";
-	 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	 // this is imporant - we set our input date format to match our input string
-	 // if format doesn't match you'll get nil from your string, so be careful
-	 [dateFormatter setDateFormat:@"dd-MM-yyyy"];
-	 NSDate *dateFromString = [[NSDate alloc] init];
-	 // voila!
-	 dateFromString = [dateFormatter dateFromString:dateString];
-	 [dateFormatter release];
-	 
-	 */
 	
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateFormat:@"HH:mm"];
