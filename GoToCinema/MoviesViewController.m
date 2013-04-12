@@ -36,7 +36,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return arrayWithMovies.count;
+	return self.arrayWithDates.count;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -72,12 +72,50 @@
 	[self presentViewController:navigationController animated:YES completion:nil];
 	 */
 	
-	NSDate *currentDate = [NSDate date];
-	 
+	// get the current date
+	NSDate *date = [NSDate date];
+	
+	// format it
+	NSDateFormatter *dateFormat = [[NSDateFormatter alloc]init];
+	[dateFormat setDateFormat:@"HH:mm"];
+	
+	// convert it to a string
+	NSString *dateString = [dateFormat stringFromDate:date];
+	
+	NSDate *dateFromString = [dateFormat dateFromString:dateString];
+	
 	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"self" ascending:YES];
 	NSArray *descriptors = [NSArray arrayWithObject:sortDescriptor];
 
-	self.arrayWithDates = [self.arrayWithDates sortedArrayUsingDescriptors:descriptors];
+	NSArray *array = [NSArray array];
+	array = [self.arrayWithDates sortedArrayUsingDescriptors:descriptors];
+	self.arrayWithDates = [NSMutableArray arrayWithArray:array];
+	/*
+	for (NSDate *date in self.arrayWithDates) {
+		if ([date compare:dateFromString] == NSOrderedAscending) {
+			[self.arrayWithDates removeObject:date];
+		} else if ([date compare:dateFromString] == NSOrderedDescending) {
+			continue;
+		} else {
+			[self.arrayWithDates removeObject:date];
+		}
+	}
+	*/
+	
+	for (int index = 0; index < self.arrayWithDates.count; index++) {
+		NSDate *date = [self.arrayWithDates objectAtIndex:index];
+		NSLog(@"date = %@ date from string = %@", date, dateFromString);
+		if ([date compare:dateFromString] == NSOrderedAscending) {
+			[self.arrayWithDates removeObject:date];
+		} else if ([date compare:dateFromString] == NSOrderedDescending) {
+			continue;
+		} else {
+			[self.arrayWithDates removeObject:date];
+		}
+	}
+	
+//	[self.arrayWithDates removeObjectAtIndex:0];
+	
 	[self.tableView reloadData];
 }
 
