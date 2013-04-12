@@ -61,6 +61,26 @@
 
 }
 
+NSInteger dateSort(id num1, id num2, void *context)
+{
+	Movie *movie1 = (Movie *)num1;
+	Movie *movie2 = (Movie *)num2;
+	
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"HH:mm"];
+	NSDate *v1 = [dateFormatter dateFromString:movie1.time];
+	NSDate *v2 = [dateFormatter dateFromString:movie2.time];
+	/*
+    if (v1 < v2)
+        return NSOrderedAscending;
+    else if (v1 > v2)
+        return NSOrderedDescending;
+    else
+        return NSOrderedSame;
+	 */
+	return [v1 compare:v2];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -68,10 +88,7 @@
 	self.title = @"Movies";
 	UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithTitle:@"Sort" style:UIBarButtonItemStylePlain target:self action:@selector(sortItems)];
 	self.navigationItem.rightBarButtonItem = sortButton;
-	
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"movie.time" ascending:YES];
-	self.arrayToShow = [self.arrayToShow sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-	
+	self.arrayToShow = [self.arrayToShow sortedArrayUsingFunction:dateSort context:NULL];
 }
 
 - (void)didReceiveMemoryWarning
