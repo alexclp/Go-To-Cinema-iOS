@@ -38,17 +38,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-	if (indexPath.row == 0) {
-		
-		NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"self" ascending:YES];
-		NSArray *descriptors = [NSArray arrayWithObject:sortDescriptor];
-		
-		self.moviesControlller.arrayWithDates = [self.moviesControlller.arrayWithDates sortedArrayUsingDescriptors:descriptors];
-		[self.moviesControlller.tableView reloadData];
-	} else if (indexPath.row == 1) {
-		
-	}
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 

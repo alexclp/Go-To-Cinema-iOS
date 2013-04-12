@@ -11,8 +11,6 @@
 @interface MoviesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray *arrayWithMovies;
-@property (strong, nonatomic) NSMutableDictionary *dictionaryDateMovie;
-@property (strong, nonatomic) NSMutableArray  *arrayWithDates;
+@property (strong, nonatomic) NSArray *arrayToShow;
 
 @end

@@ -20,6 +20,7 @@
 
 @synthesize rawData;
 @synthesize locationManager;
+@synthesize mvc;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +42,7 @@
 	NSString *stringFromData = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 	NSDictionary *result = [parser objectWithString:stringFromData];
 	return [result objectForKey:@"movies"];
+	NSLog(@"raaaaw = %@", result);
 }
 
 - (NSArray *)createArrayOfMoviesFromRawData:(NSArray *)data
@@ -58,12 +60,43 @@
 	return arrayToAdd.copy;
 }
 
+- (void)sendDataToViewController
+{
+	self.mvc = [[MoviesViewController alloc] init];
+	
+//	NSLog(@"array = %@", self.rawData);
+
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"HH:mm"];
+	NSDate *date = [NSDate date];
+	NSString *stringFromDate = [dateFormatter stringFromDate:date];
+//	NSDate *currentDate = [dateFormatter dateFromString:stringFromDate];
+	NSDate *currentDate = [dateFormatter dateFromString:@"14:15"];
+	
+	NSMutableArray *arrayToAdd = [NSMutableArray array];
+	NSArray *arrayWithData = [self createArrayOfMoviesFromRawData:self.rawData];
+	
+	NSLog(@"current date = %@", currentDate);
+	
+	for (Movie *movie in arrayWithData) {
+		NSDate *movieDate = [dateFormatter dateFromString:movie.time];
+		if ([currentDate compare:movieDate] == NSOrderedAscending) {
+			[arrayToAdd addObject:movie];
+		} else if ([currentDate compare:movieDate] == NSOrderedDescending) {
+			continue;
+		} else {
+			[arrayToAdd addObject:movie];
+		}
+	}
+	self.mvc.arrayToShow = [[NSArray alloc] initWithArray:arrayToAdd.copy];
+}
+
 #pragma mark user interaction methods
 
 - (IBAction)seeMovies:(UIButton *)button
 {
-	MoviesViewController *mvc = [[MoviesViewController alloc] init];
-	mvc.arrayWithMovies = [[NSArray alloc] initWithArray:[self createArrayOfMoviesFromRawData:self.rawData]];
+	[self sendDataToViewController];
+	
 	[self.navigationController pushViewController:mvc animated:YES];
 }
 
@@ -107,11 +140,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-	self.rawData = [self parseRawDataFromURL:[NSURL URLWithString:@"http://warm-eyrie-7268.herokuapp.com/date.json"]];
+	self.rawData = [[NSArray alloc] initWithArray:[self parseRawDataFromURL:[NSURL URLWithString:@"http://warm-eyrie-7268.herokuapp.com/date.json"]]];
 	self.title = @"Action";
-	
-	self.currentTime.text = [NSString stringWithFormat:@"%@", [NSDate date]];
-	
 	
 	[self updateDeviceLocation];
 }
