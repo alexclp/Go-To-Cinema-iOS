@@ -13,6 +13,7 @@
 @synthesize romanianNameLabel;
 @synthesize englishNameLabel;
 @synthesize timeLabel;
+@synthesize cinemaLabel;
 
 - (id)initWithFrame:(CGRect)frame
 {

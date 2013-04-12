@@ -58,6 +58,7 @@
 	cell.englishNameLabel.text = currentMovie.englishTitle;
 	cell.romanianNameLabel.text = currentMovie.romanianTitle;
 	cell.timeLabel.text = currentMovie.time;
+	cell.cinemaLabel.text = currentMovie.cinema;
 	
 	return cell;
 
