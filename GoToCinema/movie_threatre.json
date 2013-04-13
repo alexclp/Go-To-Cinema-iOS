@@ -1,0 +1,349 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "CmRWAAAASw0WUJgeKwdb7jgGiws69w-foUn1btzmYWeG05httuUcoP8ZnCuVG7-37yTXQOVbw6DS9GAJJlk411mQte-_fvXg_nNh7wfb-4NQo8BM1uw_a4na-JLKc07NhRmtoWPREhD3EmPuOkRnt-IPOU4AYhZfGhQKYXRVEfIjwMc_x_YWi9rmNkUJQw",
+   "results" : [
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.4366070,
+               "lng" : 26.1036010
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "bace97b1529ef1f38b874a80649c5d0992e7f806",
+         "name" : "National Theatre of Bucharest",
+         "photos" : [
+            {
+               "height" : 900,
+               "html_attributions" : [ "From a Google User" ],
+               "photo_reference" : "CoQBdQAAAI5CzbJAmYff_9vlulDnpRhjSAyNMgAJP9hM7X_yjSjXOuWePME3s2U1Zs-i74xkgNS-apl6T-8KGGnBng307BGDNYOD6PqGYwPmMi-JRPZGSuz1WcIM1RTtOQE6cJKWrRJVqss_7sxBCW3YaHT-9U7fTiq4SXbjMGplBClkNHoVEhBA71jCjXm4euSdgjBNzxLXGhT8pIej2UJRr6QO1fDh9Fo4W7oAYQ",
+               "width" : 1600
+            }
+         ],
+         "rating" : 4.50,
+         "reference" : "CoQBegAAAO95hMm75kM4jDYd8Ox8Pfjx7W14fs5W4jaGQnPjMRWumTxsVeSsK0ilWfoDc30unFbJhLQtQtGIRTrS8QWZXSwsERfal3hp8cVfL_eRouTnvsIYU9iEeagsIjpX3l-sh6jNXZ9a8xK352LWkqtQHY2GtOQ6PI7fx3Sz39DqQnccEhBMBXO2mSOOseuBITPb6LekGhQ535xXjdLghlqixlYbi_EfpBGueg",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Bulevardul Nicolae Bălcescu, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.419560,
+               "lng" : 26.1266510
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "1271efeba1d2a48a78138efcfe1ec8b1b39601cb",
+         "name" : "Hollywood Multiplex",
+         "photos" : [
+            {
+               "height" : 1632,
+               "html_attributions" : [ "From a Google User" ],
+               "photo_reference" : "CoQBcwAAAPyKS_KAGgp1XJTNJNRGYpIayc1ilRF2YIxoXSxSjX8iuMYF0W3HbKHZyngxvNUI9gmuUeJkPpgssuNGI_kny3yZ_OV_fwC0dqcFwgWazTD4r98w_EaHTEf9KBd1uQYcXPj3P_ErKMDtCO_1_DmsktrfUIgRJvCsqzXNRz047vhDEhBN1JiPiQj-EC67D5uX9ZjTGhSgHH2f9ysSylL3zT1rYGZFkkbGQQ",
+               "width" : 1224
+            }
+         ],
+         "rating" : 4.30,
+         "reference" : "CoQBcQAAABGOG25eDBA7c5uQy_26Z70dBaN5Hcn-ZdjClOIBQ9X6IySWy5nQNB7MnEYCsGk74h6eweFW7F9PY2HQK8eHV_0F079uPubGBZcMVttYdotqvNWlcr9TW1ToQCCm7XP6M7BK1Od5P33y1sB7dcaopPeD91nVg943XIsvpoNfH6zzEhDLfJwwTYTz1YomaIF738iLGhT5WKw_0QRxSN_32uFopDDBunPtGg",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Calea Vitan 55-59, Second floor, București Mall, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.4342660,
+               "lng" : 26.1022660
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "430d4c172efb1cd4384b63f1bd83ba9d9254130d",
+         "name" : "Cinema Pro",
+         "photos" : [
+            {
+               "height" : 419,
+               "html_attributions" : [ "From a Google User" ],
+               "photo_reference" : "CnRqAAAATtaIpIGkAQbHwCCtO8rLiBCOlRO0xzS8-1HVGdR858nPGTEfRNCkmnFv4oCALeGd5PO4sn40XgsSUKOcgUB1_nYbh6QCtUdAZDQdX2cs2SMFcNsVHArjOXKEsdBgNEPqT6NsGtBpeUanBxz4VwLu1RIQ1t9P42OBGUVqCA4HdF144xoUDJBjwGkOwrkNpIDkGYIP-yo1Cq0",
+               "width" : 554
+            }
+         ],
+         "rating" : 4.10,
+         "reference" : "CnRoAAAAl6-Gx-D-I5JkGJLkZgHOnTioE3s9o6kBCRjZRFf5t_qWV1Zmow5B2nVCeVmTgUzESWqlN-J2JVImxocV3cIW4gAyzz0cyBJYrYo9ZF4M324y-6tWldcmT4slk46RexehNAqriGd-4jgY0OTYooxQOxIQ6e8iC73PJ0TacjA947ceWxoUogb7WWCDE6XN21VHlEwZKjL5mds",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Strada Ion Ghica 3, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.4314660,
+               "lng" : 26.0518460
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "1626f43e6a2c1ad2a79b1b5018a0c22ce81d5f54",
+         "name" : "Cinema City",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 728,
+               "html_attributions" : [ "From a Google User" ],
+               "photo_reference" : "CnRsAAAAj8fln1fuisDkTGwE9tsnTpJbaS2DcZnl6-fS6uzne-SiNxbzfuRAk7BWmXUCMwpnFHMkwKH8Ak1TZi2bpwZnMeDgDyfeTxz0pCUlOsFICxhbDtEo2EMw_C9sfAYwjLvMUF6Oe0tksL6JxqJykDtfcRIQhuQ3RAXS9Fu6O8oSPVkzoxoUt66D_3iaYDj6ovXwd662FYLF6po",
+               "width" : 1092
+            }
+         ],
+         "rating" : 4.90,
+         "reference" : "CnRoAAAAYYeDj3Y58sxIRUDtw8vkV-kY62kZ2I_OcPOgZoUnRtwZ128_UUtVr8xvlgcSi_AeaWq9xTZxx68sm5dY3SZtJCnfwTw23TptVCjOtPYNVlHJsvEKROaKeyU0G34rEXn2dV4x7fn928xRdSwimwHofRIQHYvqYryXdjBSqhHLJvEdQRoUZ6-as0H6Y9SKo4L0rr6TTlOKE5k",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Bulevardul Vasile Milea 4, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.4280760,
+               "lng" : 26.0347490
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "4ac7fbc5f0a880a55485bc8da7bbdc9f3b1a7767",
+         "name" : "Movieplex",
+         "rating" : 4.90,
+         "reference" : "CnRnAAAAg_EvHfaezjXhRst3Fk9KWVgnYzu6FBBTKUtO5YqkyIPXqZW3lzv761r7swxAmZSGXmGK1AexBEXs9kid4IKfa1GHqEq8Prrk0hpU4cfccfrJOWJ7r9w1QbuiSgBO1WZgG0OMvRJ5FR_t1Sd_1x5mERIQOf-Vstm31cADmKs0oDRGNBoU0A4P-cH9QW-CRnp6otr8uarAl6A",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Bulevadrul Timişoara 26, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.4382160,
+               "lng" : 26.1143010
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "f73ea540a494288ad77c835fc38ffe524215b749",
+         "name" : "Radef-Cinematograf Europa",
+         "reference" : "CoQBdgAAAOcoutP-cIbwfLIiBS-NmZavVNcHEe9aGmePkZpOTbr2L7NJT7PsLE8r2CSI4GstCTfQnXOwQVv3rH_TPmQJfDFPOpHsnS6F3W7toabfZqlrvPeNj-L3KjVhUtseFDoOcJZC4O36hjBLjBnpUf21Z1nPRyNW3OQZtSVGmzaeUTfTEhANGsllWt2sX1K_wEyxLDZlGhSVoabbTgvoOl_cEZM4Vry5bmyktQ",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Calea Moșilor 127, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.4016340,
+               "lng" : 26.0981130
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "8405d649408eac485c2b3b34976cc2b4b7c47a65",
+         "name" : "Cityplex Bucuresti",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 666,
+               "html_attributions" : [],
+               "photo_reference" : "CoQBcgAAAP5iNolBWChX7a7_bJ90_IZfypHpLznL8F5p9_OD6dxoRSBiGbmSg8C911pb8rL0OxHQDhUL18UIpUptZNMQlAnMkVdi2EoEbxhQGvWkCtqcDxxNoXfZ2BnZ0LGYpuaYzjq4xAt3qG6dAIJ7SBR7MsSth2XFsZHfj35H7Bx495heEhD_VceA8hChR-FJtxjip8gpGhQ44KZepIEVOhxqOthBT04zzADPJg",
+               "width" : 998
+            }
+         ],
+         "reference" : "CnRvAAAAnU3mWQqIoMyLJGm50ayfMWZ4GZLz8_NNkHvBTWrxnTttRucR7WP4OM1LPPbI5AXurzOthewlB5Z3lAAd5eMj1QTeaZJqSqw8RgVeuaWQZv-KDTgQko227dCUZOQwcI7pJRE1bKm5iDvulysV3aNfpBIQY_tqEe2BrOQ1lozyq_4-3BoUwwfzTh6OirfTVB-1AdxYMyGlAVI",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Oltenitei 2, Sector 4, Bucuresti, Complex Comercial City Mall-Etaj 3, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.4314450,
+               "lng" : 26.0538630
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "9df5434db4f2763924f4e0f7d7905604473fee36",
+         "name" : "Romtelecom IMAX",
+         "rating" : 4.90,
+         "reference" : "CnRsAAAAta9um3171IhZJ1yc1i2PKKDR50VgwELtOSD__Lmmc_HBEtbigSuA1zg73xybupBFSmUkE7thv72XqoZWiStalSwVGsRbf9nEOv0t2jLvSQt7EwIFOlXaJk8KZgEbwZHCp_emKe9mzo3pmGpsvvGfxRIQTT7Ehz8DOyHm4IqbhekkyxoUHfKI1BGcp-06z6tbPOVxZFoliKE",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "AFI Palace Cotroceni, Bulevardul Vasile Milea 4, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.3964770,
+               "lng" : 26.1219410
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "fb0cad53df0d54e3e2fc718fd73cbcda4eeea7ce",
+         "name" : "Cinema City",
+         "rating" : 4.60,
+         "reference" : "CnRoAAAAYem0eytVb1b9U7nchgJUUuVdX00Si85tQzXIMVHxPpHdVXX20Mad2qqKCWGf7KT4WCedG21th8k99KKZUfQT6vJWEAQc-VRepNi0gIKgQpmkDcZzi1S42tADr6HvhPP5k-ZDuMFOfeFa0P2f_KFVfBIQQJIfI5IeR_IHnmHsF1PmcBoUPKXgHAqYqcOIZcn3VhLVPVZQGbg",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Calea Văcăreşti 391, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.5074020,
+               "lng" : 26.0901260
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "c0ad88f7e201a6778d2a962037fdc438b54666db",
+         "name" : "Grand Cinema Digiplex",
+         "photos" : [
+            {
+               "height" : 1632,
+               "html_attributions" : [ "From a Google User" ],
+               "photo_reference" : "CnRlAAAALmKOQUMEx3hRZUu1_yl0egLrhqu9AHOl6uSTF-b3ewR79kTrTLg1xAIjGvxfWDEW_7-UAJAGrdBeUZGyRbz8CaIcGJMugM_XmYv8_pWUO6z5JaBPpN88F-iMyHNqpsnk6mZ4MbTQsVfeAW5Qcv4VfBIQO1uI4wR9fywKtEcvpkc8ZhoU3Y_W0oHKVddsq5adZDu83v5jEtw",
+               "width" : 918
+            }
+         ],
+         "rating" : 2.80,
+         "reference" : "CoQBcwAAAOYp6QOygw2WwSelKP2FPGw8bkWwmdY6PWWK0sP2E8q0YOguJnD_1UbTrlmJZ-TL9c62pjCSfSibWQjmmNgwK90Ymfsrg5orK7v0dffY6z0wRD-RzXMUNOv4CLWzgX67B6yHMUZVVj4MGCyhby-3LL631baS4Hsm7qES1mEw7TZnEhCkn3bWdFYyVXyt8q3WP9iZGhTBAdK4kH32xpQ1qGHVB9ozXtcmQA",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "42D, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.4546470,
+               "lng" : 26.0840540
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "80b33b2a258a3c277b914c97de75b813245fc811",
+         "name" : "Noul Cinematograf al Regizorului Român",
+         "reference" : "CpQBhQAAAMDSKICkRdpNNHEB5POL7vREwUbnkuJph8Y73_9n5ewuJwHoijHyw-LUdcmOGUcXk0EMmAZqEuBIZLd_FqGGZ29ljylV1xaQYV0O25dT9XO_-lMIoBSs-8t8y15UYkynInW-QvgjUDc7EBT-aw9iAtYHyfGflEe8ZcgAi8EzdeWyTAH8Ls3twW-T-WfpoSXl0BIQOV4LEJx2Kj9EaHm_rjDY3xoUiqz20SGVF7jc-IpIY1_k9RfZdb4",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Șoseaua Kiseleff 3, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.4377160,
+               "lng" : 26.0695210
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "9181ac4c6bda6a810dea948f2d1c606d5b746dde",
+         "name" : "Glendale Studio",
+         "reference" : "CnRtAAAAFRY8kgfjYF-ZGwRGwYLwt3I5MJIRh4krbIl_od0U9UEBJlcqs-3iF0CCxZ7wcc2wfiCjDvappuKMsjl8VGSnEWV91STGU3xoD6wNAVSkoL2e1FHbc0nsVaDMhh0EDK9UunhKwfUDR0IJb52QA7j2WBIQEFdfLSCubwcza0aYhaAx7hoUXjChZUI6dJby3iv4lVY6ZuC8d2s",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Șoseaua Cotroceni 9, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.4446850,
+               "lng" : 26.0973270
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "52b7f65dd8c9ba952d6eacfdd1bcf29aaa920d5d",
+         "name" : "Cinema Studio",
+         "reference" : "CnRrAAAAAkJvW__mJ5aXYkJIUMnqiCNmqMLBVQWNesT2vCXYT99SlkMfCCSJP9dOgYPVEUrg402QEvt4Aa8CCoa_lPj6bMRsMliiiNW3BP7bj8tUeFKuVea0NuTR6G5CRlB0EBhA48PXwVxIoYvgTnTYKibxoxIQ9M1yBKx_DJTm5Tu-1Kk5XRoUzhAD8i9HJX3VlYVNVDGFVQXflDA",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Bulevardul Gen. Gheorghe Magheru 29, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.4287420,
+               "lng" : 26.154150
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "23dd4d00270ead43fb6766528eb52b8887e560b9",
+         "name" : "Cinematograf Gloria",
+         "reference" : "CnRwAAAA8n8BuZ-qe7YYf7Z9N52xolBKRtM4UCxmwESvlwN0RrN2WMLO1WCDi7urRgRAI9Fhj8FzCOSPb2AXVhieEFhLl2E_L56BohSmA-KlTR-TPHgaSGmA7VvVf7DrzOLHU1zJKiBQ3ajMNrbUHPv-3KUGpxIQv5dRnOUYyy03jr-CyctMpRoUqsMuyIPZlPjh32qb_tUn8Nqn78c",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Titan, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.4371210,
+               "lng" : 26.096120
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "460815370bf75bb8fa7ebd5db9681578733e73aa",
+         "name" : "Cinemateca - Sala Union",
+         "reference" : "CoQBdAAAAK2RdNqDasbW8smPUCPqCzu6_FU9oxfehor-4-QzacRKr2VFYLRiaMLvBGquGDgtkKpeblpk20xHZcpt5wW47XjjFi_b4ZIOwqBh0P517zRDTPTfP05k-by5gtzpeG-n0jAtfhBQtGRNyekxw1fyHUZVyMaVKbvWie-0NGzZaoJ6EhBnGehYsntPyM8gTxTp42VzGhR56ZgKgYqSq_5jri8nNyT-7ZD_3Q",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Strada Ion Câmpineanu 21, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.4014870,
+               "lng" : 26.0977440
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "709a7a84ca6b1ae625d926c92de78814eb1aa78b",
+         "name" : "Cityplex",
+         "reference" : "CnRmAAAAdJwqXe0G7Wd74FBDTvAwfFh29TGiBGOzxbEl_eHIB_P0EV-qwmRj2OrlVF2JtZTLsWRDeal3141-qqvUd1X4AQMiVEiGEacTJxcBUXkrdUGNCOC1JV4Y-zS_srfaQzb78RP3R0jBQ45HlX98jovZchIQ52qVQXS8gRRuJLdnC2QAgRoUYslLmIwOinT_MyxcWBkh3NY482w",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Șoseaua Olteniței 2, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.4423910,
+               "lng" : 26.0991330
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "cd163d9b6413d2f3797ad7c4f764d26002807949",
+         "name" : "Patria Cinema",
+         "reference" : "CnRqAAAAYrrYikRK0VD2njLCwumQZsrJ8aht-2ldNUKzFm_QhKu95_n1Uc7uqrcoiMHs25Pzkr9ETP2RXUO6-sofhUm-2LKwf9SqERY7ePFWG62bKU0BLqDqGwUO_u6I-tqgi89qNiQ52u4Wc89FsUonbRc-uBIQBV8H_c3JEne2rOu_EYlSoRoUOcYBGRdoFj4YAqL9Mm515Fwfb20",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Bulevardul General Gheorghe Magheru 12-14, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.4411010,
+               "lng" : 26.0999040
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "23c13007df57543db392b0ebc3bd6a42e3d84a22",
+         "name" : "Cinema Scala",
+         "reference" : "CnRqAAAAmViO5iO-zDJt-78328G7ACpf2PMX8OvbLRy9f3PqhfE5ByiVHquvS-0Y8wHhvl6fCI2gQhQJghVo_sm6HPcmZ9x4JutW-9CRSvHdCEaF-KecnJUChCJamBbjofTOvde-5mSDRfK5bAo6W1eBKXrI0BIQL_iLuChN4oW9e5V86jwB5hoUGlPmauSN6n8d9mePlC0DWvjKxvk",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Bulevardul General Gheorghe Magheru 2-4, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.43460,
+               "lng" : 26.0967520
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "584ded116a8464ed7ef771841d4db015b35533aa",
+         "name" : "Corso",
+         "reference" : "CnRiAAAAgE0srI8xVl6aSBXdjfjvu6h6p5qEEmOCac10u4VcxPGbrOljO_73NB3D5hZegqJoT9kVNrSd9sDipXUnTrlWl8J1iCbgT8mMOFXejgiYEWBnkq0P8twtD0rn_-vQUa-u42DnhCsuWnNxJJDhGf9IIRIQedQ4wN1Vsw7JMY7jVx6QfhoUskjsZlKN6qDLVR9fa1ZRMCZ7kro",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Bulevardul Regina Elisabeta 27, Bucharest"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 44.4483870,
+               "lng" : 26.1037740
+            }
+         },
+         "icon" : "http://maps.gstatic.com/mapfiles/place_api/icons/movies-71.png",
+         "id" : "bed14fde7edd28c07ba1615dfc4f8b9b2501c001",
+         "name" : "Scoala de teastru",
+         "reference" : "CnRuAAAAUWpHCpSECwwAspairpVEU5o0T6TzmFkg7Wa3h_7XHR-vTnMWf8uA4IkJwizuuD77jXebFVN7VdU4qx_buOL6jXMvcRQc5SRxswtwoaktHS8oP7eTQggjOie0sgB-O419L8cA46fLhqfHk1t88gewBBIQbb67RkCunKijrxu6QGo6OxoUxItxZQcQDcQjsWw4CrrRLXzp-fc",
+         "types" : [ "movie_theater", "establishment" ],
+         "vicinity" : "Intrarea Mihai Eminescu, Bucharest"
+      }
+   ],
+   "status" : "OK"
+}

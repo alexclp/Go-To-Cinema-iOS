@@ -41,6 +41,9 @@
 		FAC5B4861715DAE4008C7828 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5B4851715DAE4008C7828 /* CoreLocation.framework */; };
 		FAC5B4881715DD8F008C7828 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5B4871715DD8F008C7828 /* MapKit.framework */; };
 		FAC5B48C17160E74008C7828 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC5B48B17160E73008C7828 /* MainWindow.xib */; };
+		FAD20F881718C0830053160D /* movie_threatre.json in Resources */ = {isa = PBXBuildFile; fileRef = FAD20F871718C0830053160D /* movie_threatre.json */; };
+		FAD20F8C1719761F0053160D /* DetailMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD20F8A1719761F0053160D /* DetailMovieViewController.m */; };
+		FAD20F8D1719761F0053160D /* DetailMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD20F8B1719761F0053160D /* DetailMovieViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +103,10 @@
 		FAC5B4851715DAE4008C7828 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FAC5B4871715DD8F008C7828 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FAC5B48B17160E73008C7828 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		FAD20F871718C0830053160D /* movie_threatre.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie_threatre.json; sourceTree = "<group>"; };
+		FAD20F891719761F0053160D /* DetailMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMovieViewController.h; sourceTree = "<group>"; };
+		FAD20F8A1719761F0053160D /* DetailMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMovieViewController.m; sourceTree = "<group>"; };
+		FAD20F8B1719761F0053160D /* DetailMovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailMovieViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +180,9 @@
 				FA2CC75F1714CFBB00DDEFC4 /* MoviesViewController.h */,
 				FA2CC7601714CFBB00DDEFC4 /* MoviesViewController.m */,
 				FA241D371714D4F600BCC84A /* MoviesViewController.xib */,
+				FAD20F891719761F0053160D /* DetailMovieViewController.h */,
+				FAD20F8A1719761F0053160D /* DetailMovieViewController.m */,
+				FAD20F8B1719761F0053160D /* DetailMovieViewController.xib */,
 				FAC5B47117156C99008C7828 /* SortOptionsModalViewController.h */,
 				FAC5B47217156C99008C7828 /* SortOptionsModalViewController.m */,
 				FAC5B47317156C99008C7828 /* SortOptionsModalViewController.xib */,
@@ -202,6 +212,7 @@
 		FA395A5017140ABE00558196 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAD20F871718C0830053160D /* movie_threatre.json */,
 				FA241D41171566A300BCC84A /* MovieCustomCell */,
 				FAC5B4701715672F008C7828 /* JSON Parser */,
 			);
@@ -297,6 +308,8 @@
 				FAC5B47517156C99008C7828 /* SortOptionsModalViewController.xib in Resources */,
 				FAC5B4841715D962008C7828 /* LocationTimeOptionViewController.xib in Resources */,
 				FAC5B48C17160E74008C7828 /* MainWindow.xib in Resources */,
+				FAD20F881718C0830053160D /* movie_threatre.json in Resources */,
+				FAD20F8D1719761F0053160D /* DetailMovieViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +339,7 @@
 				FA241D3E1715669200BCC84A /* MovieCustomCell.m in Sources */,
 				FAC5B47417156C99008C7828 /* SortOptionsModalViewController.m in Sources */,
 				FAC5B4831715D962008C7828 /* LocationTimeOptionViewController.m in Sources */,
+				FAD20F8C1719761F0053160D /* DetailMovieViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

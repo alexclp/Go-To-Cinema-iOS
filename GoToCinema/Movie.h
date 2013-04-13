@@ -14,5 +14,9 @@
 @property (strong, nonatomic) NSString *romanianTitle;
 @property (strong, nonatomic) NSString *cinema;
 @property (strong, nonatomic) NSString *time;
+@property (strong, nonatomic) NSString *rating;
+@property (strong, nonatomic) NSString *genre;
+@property (strong, nonatomic) NSString *cast;
+@property (strong, nonatomic) NSString *director;
 
 @end

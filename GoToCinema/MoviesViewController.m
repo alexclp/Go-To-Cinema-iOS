@@ -11,14 +11,18 @@
 #import "Movie.h"
 #import "MovieCustomCell.h"
 #import "SortOptionsModalViewController.h"
+#import "DetailMovieViewController.h"
 
 @interface MoviesViewController ()
+
+@property (strong, nonatomic) DetailMovieViewController *detailMovieController;
 
 @end
 
 @implementation MoviesViewController
 
 @synthesize arrayToShow;
+@synthesize detailMovieController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,6 +44,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	self.detailMovieController.movieToShow = [self.arrayToShow objectAtIndex:indexPath.row];
+	[self.navigationController pushViewController:self.detailMovieController animated:YES];
 }
 
 - (UITableView *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -82,6 +89,7 @@ NSInteger dateSort(id num1, id num2, void *context)
 	UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithTitle:@"Sort" style:UIBarButtonItemStylePlain target:self action:@selector(sortItems)];
 	self.navigationItem.rightBarButtonItem = sortButton;
 	self.arrayToShow = [self.arrayToShow sortedArrayUsingFunction:dateSort context:NULL];
+	self.detailMovieController = [[DetailMovieViewController alloc] initWithNibName:@"DetailMovieViewController" bundle:nil];
 }
 
 - (void)didReceiveMemoryWarning

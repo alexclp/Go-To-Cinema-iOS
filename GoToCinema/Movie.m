@@ -14,5 +14,9 @@
 @synthesize romanianTitle;
 @synthesize cinema;
 @synthesize time;
+@synthesize rating;
+@synthesize genre;
+@synthesize cast;
+@synthesize director;
 
 @end

@@ -12,9 +12,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-	[GMSServices provideAPIKey:@"AIzaSyC2D0dUuQxujC8lB2gSzJn5VnAOZPj1ayE"];
-	
+{	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];

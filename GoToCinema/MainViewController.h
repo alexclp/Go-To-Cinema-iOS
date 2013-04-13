@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentTime;
 @property (weak, nonatomic) IBOutlet UILabel *currentLocation;
 
+@property (strong, nonatomic) NSArray *cinemaLocations;
 @property (strong, nonatomic) NSArray *rawData;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) MoviesViewController *mvc;

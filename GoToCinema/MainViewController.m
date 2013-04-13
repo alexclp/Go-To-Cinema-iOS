@@ -21,6 +21,7 @@
 @synthesize rawData;
 @synthesize locationManager;
 @synthesize mvc;
+@synthesize cinemaLocations;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,7 +43,6 @@
 	NSString *stringFromData = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 	NSDictionary *result = [parser objectWithString:stringFromData];
 	return [result objectForKey:@"movies"];
-	NSLog(@"raaaaw = %@", result);
 }
 
 - (NSArray *)createArrayOfMoviesFromRawData:(NSArray *)data
@@ -55,6 +55,10 @@
 		movie.romanianTitle = [dictionary objectForKey:@"titluRo"];
 		movie.time = [dictionary objectForKey:@"ora"];
 		movie.cinema = [dictionary objectForKey:@"cinema"];
+		movie.rating = [dictionary objectForKey:@"nota"];
+		movie.genre = [dictionary objectForKey:@"gen"];
+		movie.cast = [dictionary objectForKey:@"actori"];
+		movie.director = [dictionary objectForKey:@"regizor"];
 		[arrayToAdd addObject:movie];
 	}
 	return arrayToAdd.copy;
@@ -63,20 +67,16 @@
 - (void)sendDataToViewController
 {
 	self.mvc = [[MoviesViewController alloc] init];
-	
-//	NSLog(@"array = %@", self.rawData);
 
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateFormat:@"HH:mm"];
 	NSDate *date = [NSDate date];
 	NSString *stringFromDate = [dateFormatter stringFromDate:date];
-//	NSDate *currentDate = [dateFormatter dateFromString:stringFromDate];
-	NSDate *currentDate = [dateFormatter dateFromString:@"14:15"];
+	NSDate *currentDate = [dateFormatter dateFromString:stringFromDate];
+//	NSDate *currentDate = [dateFormatter dateFromString:@"14:15"];
 	
 	NSMutableArray *arrayToAdd = [NSMutableArray array];
 	NSArray *arrayWithData = [self createArrayOfMoviesFromRawData:self.rawData];
-	
-	NSLog(@"current date = %@", currentDate);
 	
 	for (Movie *movie in arrayWithData) {
 		NSDate *movieDate = [dateFormatter dateFromString:movie.time];
@@ -89,6 +89,16 @@
 		}
 	}
 	self.mvc.arrayToShow = [[NSArray alloc] initWithArray:arrayToAdd.copy];
+}
+
+- (NSArray *)parseCinemaLocations
+{
+	SBJsonParser *parser = [[SBJsonParser alloc] init];
+	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"movie_threatre" ofType:@"json"];
+	NSString *stringToParse = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+
+	NSDictionary *result = [parser objectWithString:stringToParse];
+	NSLog(@"result = %@", result);
 }
 
 #pragma mark user interaction methods
@@ -114,7 +124,6 @@
 	NSString *longitude = [NSString stringWithFormat:@"%f", self.locationManager.location.coordinate.longitude];
 	
 	self.currentLocation.text = [NSString stringWithFormat:@"latitude = %@\nlongitude = %@\n", latitude, longitude];
-	
 }
 
 #pragma mark view methods
@@ -141,6 +150,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.rawData = [[NSArray alloc] initWithArray:[self parseRawDataFromURL:[NSURL URLWithString:@"http://warm-eyrie-7268.herokuapp.com/date.json"]]];
+//	self.cinemaLocations = [[NSArray alloc] initWithArray:[self parseCinemaLocations]];
 	self.title = @"Action";
 	
 	[self updateDeviceLocation];
