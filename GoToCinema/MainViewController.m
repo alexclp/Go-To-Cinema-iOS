@@ -10,6 +10,7 @@
 #import "SBJson.h"
 #import "MoviesViewController.h"
 #import "Movie.h"
+#import "Cinema.h"
 #import "LocationTimeOptionViewController.h"
 
 @interface MainViewController ()
@@ -30,6 +31,30 @@
         // Custom initialization
     }
     return self;
+}
+
+- (NSArray *)parseCinemaLocations
+{
+	SBJsonParser *parser = [[SBJsonParser alloc] init];
+	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"places" ofType:@"json"];
+	NSString *stringToParse = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+	
+	NSDictionary *result = [parser objectWithString:stringToParse];
+	return [result objectForKey:@"cinemas"];
+}
+
+- (NSDictionary *)createArrayOfCinemaLocationsFromRawData:(NSArray *)data
+{
+	NSMutableDictionary *dictionaryToAdd = [[NSMutableDictionary alloc] init];
+	
+	for (NSDictionary *dictionary in data) {
+		Cinema *cinema = [[Cinema alloc] init];
+		cinema.name = [dictionary objectForKey:@"name"];
+		cinema.longitude = [dictionary objectForKey:@"lng"];
+		cinema.latitude = [dictionary objectForKey:@"lat"];
+		[dictionaryToAdd setObject:cinema forKey:cinema.name];
+	}
+	return dictionaryToAdd.copy;
 }
 
 - (NSArray *)parseRawDataFromURL:(NSURL *)url
@@ -72,8 +97,8 @@
 	[dateFormatter setDateFormat:@"HH:mm"];
 	NSDate *date = [NSDate date];
 	NSString *stringFromDate = [dateFormatter stringFromDate:date];
-	NSDate *currentDate = [dateFormatter dateFromString:stringFromDate];
-//	NSDate *currentDate = [dateFormatter dateFromString:@"14:15"];
+//	NSDate *currentDate = [dateFormatter dateFromString:stringFromDate];
+	NSDate *currentDate = [dateFormatter dateFromString:@"21:30"];
 	
 	NSMutableArray *arrayToAdd = [NSMutableArray array];
 	NSArray *arrayWithData = [self createArrayOfMoviesFromRawData:self.rawData];
@@ -88,18 +113,11 @@
 			[arrayToAdd addObject:movie];
 		}
 	}
+	
+	self.mvc.cinemaLocation = [[NSDictionary alloc] initWithDictionary:[self createArrayOfCinemaLocationsFromRawData:[self parseCinemaLocations]]];
 	self.mvc.arrayToShow = [[NSArray alloc] initWithArray:arrayToAdd.copy];
 }
 
-- (NSArray *)parseCinemaLocations
-{
-	SBJsonParser *parser = [[SBJsonParser alloc] init];
-	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"movie_threatre" ofType:@"json"];
-	NSString *stringToParse = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
-
-	NSDictionary *result = [parser objectWithString:stringToParse];
-	NSLog(@"result = %@", result);
-}
 
 #pragma mark user interaction methods
 
@@ -149,8 +167,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-	self.rawData = [[NSArray alloc] initWithArray:[self parseRawDataFromURL:[NSURL URLWithString:@"http://warm-eyrie-7268.herokuapp.com/date.json"]]];
-//	self.cinemaLocations = [[NSArray alloc] initWithArray:[self parseCinemaLocations]];
+	self.rawData = [[NSArray alloc] initWithArray:[self parseRawDataFromURL:[NSURL URLWithString:@"http://parsercinema.eu01.aws.af.cm/date.json"]]];
 	self.title = @"Action";
 	
 	[self updateDeviceLocation];

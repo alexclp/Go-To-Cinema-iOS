@@ -1,0 +1,99 @@
+{
+   "cinemas":[
+      {
+         "name":"Grand Cinema Digiplex",
+         "lat":44.507402,
+         "lng":26.090126
+      },
+      {
+         "name":"Hollywood Multiplex",
+         "lat":44.41956,
+         "lng":26.126651
+      },
+      {
+         "name":"Glendale Studio",
+         "lat":44.437716,
+         "lng":26.069521
+      },
+      {
+         "name":"Corso",
+         "lat":44.4346,
+         "lng":26.096752
+      },
+      {
+         "name":"Movieplex Cinema Plaza",
+         "lat":44.4382160,
+         "lng":26.1143010
+      },
+      {
+         "name":"The Light Cinema",
+         "lat":44.409052,
+         "lng":26.086395
+      },
+      {
+         "name":"Romtelecom IMAX",
+         "lat":44.4314450,
+         "lng":26.0538630
+      },
+      {
+         "name":"Scala",
+         "lat":44.4411010,
+         "lng":26.0999040
+      },
+      {
+         "name":"Patria",
+         "lat":44.4423910,
+         "lng":26.0991330
+      },
+      {
+         "name":"Caffe Cinema 3D Patria",
+         "lat":44.4423910,
+         "lng":26.0991330
+      },
+      {
+         "name":"Cinema City Cotroceni",
+         "lat":44.4314450,
+         "lng":26.0538630
+      },
+      {
+         "name":"Cinema City Cotroceni VIP",
+         "lat":44.4314450,
+         "lng":26.0538630
+      },
+      {
+         "name":"Cinema City Sun Plaza",
+         "lat":44.396106,
+         "lng":26.123128
+      },
+      {
+         "name":"Grand VIP Studios",
+         "lat":44.507058,
+         "lng":26.090893
+      },
+      {
+         "name":"Movie Vip Caffe",
+         "lat":44.374388,
+         "lng":26.119904
+      },
+      {
+         "name":"CinemaPRO",
+         "lat":44.4342660,
+         "lng":26.1022660
+      },
+      {
+         "name":"Europa",
+         "lat":44.4382160,
+         "lng":26.1143010
+      },
+      {
+         "name":"Studio",
+         "lat":44.4446850,
+         "lng":26.0973270
+      },
+      {
+         "name":"Gloria",
+         "lat":44.4287420,
+         "lng":26.154150
+      }
+   ]
+}

@@ -23,6 +23,7 @@
 
 @synthesize arrayToShow;
 @synthesize detailMovieController;
+@synthesize cinemaLocation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,8 +45,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+	Movie *movie = [self.arrayToShow objectAtIndex:indexPath.row];
 	
-	self.detailMovieController.movieToShow = [self.arrayToShow objectAtIndex:indexPath.row];
+	self.detailMovieController.movieToShow = movie;
+	self.detailMovieController.cinemaToShow = [self.cinemaLocation objectForKey:movie.cinema];
+
 	[self.navigationController pushViewController:self.detailMovieController animated:YES];
 }
 

@@ -13,6 +13,8 @@
 		FA241D3E1715669200BCC84A /* MovieCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA241D3D1715669200BCC84A /* MovieCustomCell.m */; };
 		FA241D401715669D00BCC84A /* MovieCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA241D3F1715669D00BCC84A /* MovieCustomCell.xib */; };
 		FA2CC7611714CFBB00DDEFC4 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2CC7601714CFBB00DDEFC4 /* MoviesViewController.m */; };
+		FA37CC57171C892B000ADCF0 /* places.json in Resources */ = {isa = PBXBuildFile; fileRef = FA37CC56171C892B000ADCF0 /* places.json */; };
+		FA37CC5A171CB398000ADCF0 /* Cinema.m in Sources */ = {isa = PBXBuildFile; fileRef = FA37CC59171CB398000ADCF0 /* Cinema.m */; };
 		FA395A101714040D00558196 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA395A0F1714040D00558196 /* UIKit.framework */; };
 		FA395A121714040D00558196 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA395A111714040D00558196 /* Foundation.framework */; };
 		FA395A141714040D00558196 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA395A131714040D00558196 /* CoreGraphics.framework */; };
@@ -41,7 +43,6 @@
 		FAC5B4861715DAE4008C7828 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5B4851715DAE4008C7828 /* CoreLocation.framework */; };
 		FAC5B4881715DD8F008C7828 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5B4871715DD8F008C7828 /* MapKit.framework */; };
 		FAC5B48C17160E74008C7828 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC5B48B17160E73008C7828 /* MainWindow.xib */; };
-		FAD20F881718C0830053160D /* movie_threatre.json in Resources */ = {isa = PBXBuildFile; fileRef = FAD20F871718C0830053160D /* movie_threatre.json */; };
 		FAD20F8C1719761F0053160D /* DetailMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD20F8A1719761F0053160D /* DetailMovieViewController.m */; };
 		FAD20F8D1719761F0053160D /* DetailMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD20F8B1719761F0053160D /* DetailMovieViewController.xib */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,9 @@
 		FA241D3F1715669D00BCC84A /* MovieCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCustomCell.xib; sourceTree = "<group>"; };
 		FA2CC75F1714CFBB00DDEFC4 /* MoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
 		FA2CC7601714CFBB00DDEFC4 /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
+		FA37CC56171C892B000ADCF0 /* places.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = places.json; sourceTree = "<group>"; };
+		FA37CC58171CB398000ADCF0 /* Cinema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cinema.h; sourceTree = "<group>"; };
+		FA37CC59171CB398000ADCF0 /* Cinema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cinema.m; sourceTree = "<group>"; };
 		FA395A0C1714040D00558196 /* GoToCinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoToCinema.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA395A0F1714040D00558196 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FA395A111714040D00558196 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,7 +107,6 @@
 		FAC5B4851715DAE4008C7828 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FAC5B4871715DD8F008C7828 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FAC5B48B17160E73008C7828 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		FAD20F871718C0830053160D /* movie_threatre.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie_threatre.json; sourceTree = "<group>"; };
 		FAD20F891719761F0053160D /* DetailMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMovieViewController.h; sourceTree = "<group>"; };
 		FAD20F8A1719761F0053160D /* DetailMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMovieViewController.m; sourceTree = "<group>"; };
 		FAD20F8B1719761F0053160D /* DetailMovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailMovieViewController.xib; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 				FAC5B48B17160E73008C7828 /* MainWindow.xib */,
 				FA395A5117140B5900558196 /* Movie.h */,
 				FA395A5217140B5900558196 /* Movie.m */,
+				FA37CC58171CB398000ADCF0 /* Cinema.h */,
+				FA37CC59171CB398000ADCF0 /* Cinema.m */,
 				FA395A2C171404C400558196 /* MainViewController.h */,
 				FA395A2D171404C400558196 /* MainViewController.m */,
 				FA241D351714D4C500BCC84A /* MainViewController.xib */,
@@ -212,7 +217,7 @@
 		FA395A5017140ABE00558196 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FAD20F871718C0830053160D /* movie_threatre.json */,
+				FA37CC56171C892B000ADCF0 /* places.json */,
 				FA241D41171566A300BCC84A /* MovieCustomCell */,
 				FAC5B4701715672F008C7828 /* JSON Parser */,
 			);
@@ -308,8 +313,8 @@
 				FAC5B47517156C99008C7828 /* SortOptionsModalViewController.xib in Resources */,
 				FAC5B4841715D962008C7828 /* LocationTimeOptionViewController.xib in Resources */,
 				FAC5B48C17160E74008C7828 /* MainWindow.xib in Resources */,
-				FAD20F881718C0830053160D /* movie_threatre.json in Resources */,
 				FAD20F8D1719761F0053160D /* DetailMovieViewController.xib in Resources */,
+				FA37CC57171C892B000ADCF0 /* places.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +345,7 @@
 				FAC5B47417156C99008C7828 /* SortOptionsModalViewController.m in Sources */,
 				FAC5B4831715D962008C7828 /* LocationTimeOptionViewController.m in Sources */,
 				FAD20F8C1719761F0053160D /* DetailMovieViewController.m in Sources */,
+				FA37CC5A171CB398000ADCF0 /* Cinema.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 @class Movie;
+@class Cinema;
 
 @interface DetailMovieViewController : UIViewController
 
@@ -21,5 +22,6 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @property (strong, nonatomic) Movie *movieToShow;
+@property (strong, nonatomic) Cinema *cinemaToShow;
 
 @end
