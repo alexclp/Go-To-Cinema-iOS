@@ -55,6 +55,19 @@
 	
     // 3
     [self.mapView setRegion:viewRegion animated:YES];
+		
+	
+	CLLocationCoordinate2D annotationCoord;
+	
+	annotationCoord.latitude = self.cinemaToShow.latitude.doubleValue;
+	annotationCoord.longitude = self.cinemaToShow.longitude.doubleValue;
+	
+	MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
+	annotationPoint.coordinate = annotationCoord;
+	annotationPoint.title = self.cinemaToShow.name;
+//	annotationPoint.subtitle = @"Microsoft's headquarters";
+	[self.mapView addAnnotation:annotationPoint];
+	
 	
 	
 	[super viewWillAppear:animated];

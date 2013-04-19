@@ -23,6 +23,7 @@
 @synthesize locationManager;
 @synthesize mvc;
 @synthesize cinemaLocations;
+@synthesize cinemaDistances;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +32,37 @@
         // Custom initialization
     }
     return self;
+}
+
+- (NSDictionary *)getDistancesFromCurrentLocation:(CLLocationManager *)location
+{
+	NSString *longitude = [NSString stringWithFormat:@"%f", location.location.coordinate.longitude];
+	NSString *latitude = [NSString stringWithFormat:@"%f", location.location.coordinate.latitude];
+	
+	NSLog(@"longitude = %@", longitude);
+	NSLog(@"latitude = %@", latitude);
+	
+	SBJsonParser *parser = [[SBJsonParser alloc] init];
+	
+	NSString *URLString = [NSString stringWithFormat:@"http://thawing-fortress-7476.herokuapp.com/getDistance.php?lat=%@&lng=%@", latitude, longitude];
+	NSURL *url = [NSURL URLWithString:URLString];
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+	[request setHTTPMethod:@"GET"];
+	NSError *error = [[NSError alloc] init];
+	NSHTTPURLResponse *responseCode = nil;
+	
+    NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
+	
+	NSString *stringFromData = [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding];
+	
+	NSLog(@"string from data = %@", stringFromData);
+	
+	NSDictionary *result = [parser objectWithString:stringFromData];
+
+	NSLog(@"result = %@", result);
+	
+	
+	return nil;
 }
 
 - (NSArray *)parseCinemaLocations
@@ -118,7 +150,6 @@
 	self.mvc.arrayToShow = [[NSArray alloc] initWithArray:arrayToAdd.copy];
 }
 
-
 #pragma mark user interaction methods
 
 - (IBAction)seeMovies:(UIButton *)button
@@ -169,6 +200,13 @@
     // Do any additional setup after loading the view from its nib.
 	self.rawData = [[NSArray alloc] initWithArray:[self parseRawDataFromURL:[NSURL URLWithString:@"http://parsercinema.eu01.aws.af.cm/date.json"]]];
 	self.title = @"Action";
+	
+	self.locationManager = [[CLLocationManager alloc] init];
+	self.locationManager.distanceFilter = kCLDistanceFilterNone;
+	self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+	[self.locationManager startUpdatingLocation];
+	
+//	self.cinemaDistances = [[NSDictionary alloc] initWithDictionary:[self getDistancesFromCurrentLocation:self.locationManager]];
 	
 	[self updateDeviceLocation];
 }
