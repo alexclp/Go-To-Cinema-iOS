@@ -65,7 +65,6 @@
 	MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
 	annotationPoint.coordinate = annotationCoord;
 	annotationPoint.title = self.cinemaToShow.name;
-//	annotationPoint.subtitle = @"Microsoft's headquarters";
 	[self.mapView addAnnotation:annotationPoint];
 	
 	

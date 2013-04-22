@@ -34,35 +34,37 @@
     return self;
 }
 
-- (NSDictionary *)getDistancesFromCurrentLocation:(CLLocationManager *)location
+- (void)getDistancesFromCurrentLocation:(CLLocationManager *)location
 {
-	NSString *longitude = [NSString stringWithFormat:@"%f", location.location.coordinate.longitude];
-	NSString *latitude = [NSString stringWithFormat:@"%f", location.location.coordinate.latitude];
+//	NSString *longitude = [NSString stringWithFormat:@"%f", location.location.coordinate.longitude];
+//	NSString *latitude = [NSString stringWithFormat:@"%f", location.location.coordinate.latitude];
 	
-	NSLog(@"longitude = %@", longitude);
-	NSLog(@"latitude = %@", latitude);
+	NSString *longitude = @"26.1266510";
+	NSString *latitude = @"44.419560";
+	
+//	NSLog(@"longitude = %@", longitude);
+//	NSLog(@"latitude = %@", latitude);
 	
 	SBJsonParser *parser = [[SBJsonParser alloc] init];
 	
 	NSString *URLString = [NSString stringWithFormat:@"http://thawing-fortress-7476.herokuapp.com/getDistance.php?lat=%@&lng=%@", latitude, longitude];
 	NSURL *url = [NSURL URLWithString:URLString];
-	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-	[request setHTTPMethod:@"GET"];
-	NSError *error = [[NSError alloc] init];
-	NSHTTPURLResponse *responseCode = nil;
+//	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 	
-    NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
+	NSMutableURLRequest *request = [NSURLRequest requestWithURL:url];
+	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 	
-	NSString *stringFromData = [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding];
+//	[request setHTTPMethod:@"GET"];
+//	NSError *error = [[NSError alloc] init];
+//	NSHTTPURLResponse *responseCode = nil;
 	
-	NSLog(@"string from data = %@", stringFromData);
+//    NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
 	
-	NSDictionary *result = [parser objectWithString:stringFromData];
-
-	NSLog(@"result = %@", result);
+//	NSString *stringFromData = [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding];
 	
+//	NSDictionary *result = [parser objectWithString:stringFromData];
 	
-	return nil;
+//	return [result objectForKey:@"cinema"];
 }
 
 - (NSArray *)parseCinemaLocations
@@ -150,6 +152,38 @@
 	self.mvc.arrayToShow = [[NSArray alloc] initWithArray:arrayToAdd.copy];
 }
 
+#pragma mark NSURLConnection delegate methods
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+	NSLog(@"received response");
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+	NSLog(@"received data");
+	
+	
+	SBJsonParser *parser = [[SBJsonParser alloc] init];
+	NSString *stringFromData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	NSDictionary *dictionary = [NSDictionary dictionary];
+	dictionary = [parser objectWithString:stringFromData];
+	
+	
+	self.cinemaDistances = [[NSArray alloc] initWithArray:[dictionary objectForKey:@"cinema"]];
+	NSLog(@"lala = %@", self.cinemaDistances);
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+	NSLog(@"failed with error");
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+	NSLog(@"finished loading");
+}
+
 #pragma mark user interaction methods
 
 - (IBAction)seeMovies:(UIButton *)button
@@ -184,6 +218,8 @@
 	self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
 	[self.locationManager startUpdatingLocation];
 	
+//	self.cinemaDistances = [[NSDictionary alloc] initWithDictionary:[self getDistancesFromCurrentLocation:self.locationManager]];
+	
 	[super viewWillAppear:animated];
 }
 
@@ -206,7 +242,7 @@
 	self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
 	[self.locationManager startUpdatingLocation];
 	
-//	self.cinemaDistances = [[NSDictionary alloc] initWithDictionary:[self getDistancesFromCurrentLocation:self.locationManager]];
+	[self getDistancesFromCurrentLocation:self.locationManager];
 	
 	[self updateDeviceLocation];
 }
