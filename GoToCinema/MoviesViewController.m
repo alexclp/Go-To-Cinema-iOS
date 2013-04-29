@@ -24,6 +24,7 @@
 @synthesize arrayToShow;
 @synthesize detailMovieController;
 @synthesize cinemaLocation;
+@synthesize cinemaDurationAndDistance;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -95,6 +96,8 @@ NSInteger dateSort(id num1, id num2, void *context)
 	self.navigationItem.rightBarButtonItem = sortButton;
 	self.arrayToShow = [self.arrayToShow sortedArrayUsingFunction:dateSort context:NULL];
 	self.detailMovieController = [[DetailMovieViewController alloc] initWithNibName:@"DetailMovieViewController" bundle:nil];
+	
+	NSLog(@"cinema location = %@", self.cinemaDurationAndDistance);
 }
 
 - (void)didReceiveMemoryWarning

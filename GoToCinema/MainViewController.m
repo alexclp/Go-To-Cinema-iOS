@@ -34,7 +34,7 @@
     return self;
 }
 
-- (void)getDistancesFromCurrentLocation:(CLLocationManager *)location
+- (NSDictionary *)getDistancesFromCurrentLocation:(CLLocationManager *)location
 {
 //	NSString *longitude = [NSString stringWithFormat:@"%f", location.location.coordinate.longitude];
 //	NSString *latitude = [NSString stringWithFormat:@"%f", location.location.coordinate.latitude];
@@ -49,22 +49,22 @@
 	
 	NSString *URLString = [NSString stringWithFormat:@"http://thawing-fortress-7476.herokuapp.com/getDistance.php?lat=%@&lng=%@", latitude, longitude];
 	NSURL *url = [NSURL URLWithString:URLString];
-//	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 	
-	NSMutableURLRequest *request = [NSURLRequest requestWithURL:url];
-	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+//	NSMutableURLRequest *request = [NSURLRequest requestWithURL:url];
+//	NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 	
-//	[request setHTTPMethod:@"GET"];
-//	NSError *error = [[NSError alloc] init];
-//	NSHTTPURLResponse *responseCode = nil;
+	[request setHTTPMethod:@"GET"];
+	NSError *error = [[NSError alloc] init];
+	NSHTTPURLResponse *responseCode = nil;
 	
-//    NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
+    NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
 	
-//	NSString *stringFromData = [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding];
+	NSString *stringFromData = [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding];
 	
-//	NSDictionary *result = [parser objectWithString:stringFromData];
+	NSDictionary *result = [parser objectWithString:stringFromData];
 	
-//	return [result objectForKey:@"cinema"];
+	return [result objectForKey:@"cinema"];
 }
 
 - (NSArray *)parseCinemaLocations
@@ -148,8 +148,28 @@
 		}
 	}
 	
+	NSLog(@"array to add %@", arrayToAdd);
 	self.mvc.cinemaLocation = [[NSDictionary alloc] initWithDictionary:[self createArrayOfCinemaLocationsFromRawData:[self parseCinemaLocations]]];
 	self.mvc.arrayToShow = [[NSArray alloc] initWithArray:arrayToAdd.copy];
+}
+
+- (NSDictionary *)createDictionaryOfDurationFromArray:(NSArray *)array
+{
+	NSMutableDictionary *dictionaryToAdd = [[NSMutableDictionary alloc] init];
+	
+	for (NSDictionary *dictionary in array) {
+		NSMutableArray *arrayToAddData = [NSMutableArray array];
+		NSString *cinemaName = [dictionary objectForKey:@"name"];
+		NSString *duration = [dictionary objectForKey:@"min"];
+		NSString *distance = [dictionary objectForKey:@"km"];
+		[arrayToAddData addObject:duration];
+		[arrayToAddData addObject:distance];
+		[dictionaryToAdd setObject:arrayToAddData forKey:cinemaName];
+	}
+	
+//	NSLog(@"dictionary to add = %@", dictionaryToAdd);
+	
+	return dictionaryToAdd.copy;
 }
 
 #pragma mark NSURLConnection delegate methods
@@ -169,9 +189,13 @@
 	NSDictionary *dictionary = [NSDictionary dictionary];
 	dictionary = [parser objectWithString:stringFromData];
 	
-	
 	self.cinemaDistances = [[NSArray alloc] initWithArray:[dictionary objectForKey:@"cinema"]];
-	NSLog(@"lala = %@", self.cinemaDistances);
+	
+	self.mvc = [[MoviesViewController alloc] init];
+	NSLog(@"mvc = %@", self.mvc);
+	
+	self.mvc.cinemaDurationAndDistance = [[NSDictionary alloc] initWithDictionary:[self createDictionaryOfDurationFromArray:self.cinemaDistances]];
+	NSLog(@"distances = %@", self.mvc.cinemaDurationAndDistance);
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
@@ -242,9 +266,10 @@
 	self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
 	[self.locationManager startUpdatingLocation];
 	
-	[self getDistancesFromCurrentLocation:self.locationManager];
+	NSDictionary *dictionary = [self getDistancesFromCurrentLocation:self.locationManager];
 	
 	[self updateDeviceLocation];
+
 }
 
 - (void)didReceiveMemoryWarning
