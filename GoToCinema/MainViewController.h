@@ -21,6 +21,7 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) MoviesViewController *mvc;
 @property (strong, nonatomic) NSArray *cinemaDistances;
+@property (strong, nonatomic) NSArray *cinemaDistanceDictionary;
 
 - (IBAction)seeMovies:(UIButton *)button;
 - (IBAction)setTimeAndLocation:(UIButton *)button;

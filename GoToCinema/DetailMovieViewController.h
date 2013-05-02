@@ -19,9 +19,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *genreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *castLabel;
 @property (weak, nonatomic) IBOutlet UILabel *directorLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @property (strong, nonatomic) Movie *movieToShow;
-@property (strong, nonatomic) Cinema *cinemaToShow;
+//@property (strong, nonatomic) Cinema *cinemaToShow;
+
+@property (strong, nonatomic) NSArray *cinemaToShow;
 
 @end

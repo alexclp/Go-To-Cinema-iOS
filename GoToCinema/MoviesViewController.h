@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *arrayToShow;
 @property (strong, nonatomic) NSDictionary *cinemaLocation;
-@property (strong, nonatomic) NSDictionary *cinemaDurationAndDistance;
+@property (strong, nonatomic) NSArray *rawData;
+@property (strong, nonatomic) NSDictionary *keyValue;
+@property (strong, nonatomic) NSArray *arrayOfSeconds;
 
 @end

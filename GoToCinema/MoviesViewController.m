@@ -24,7 +24,9 @@
 @synthesize arrayToShow;
 @synthesize detailMovieController;
 @synthesize cinemaLocation;
-@synthesize cinemaDurationAndDistance;
+@synthesize rawData;
+@synthesize keyValue;
+@synthesize arrayOfSeconds;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -50,7 +52,8 @@
 	Movie *movie = [self.arrayToShow objectAtIndex:indexPath.row];
 	
 	self.detailMovieController.movieToShow = movie;
-	self.detailMovieController.cinemaToShow = [self.cinemaLocation objectForKey:movie.cinema];
+//	self.detailMovieController.cinemaToShow = [self.cinemaLocation objectForKey:movie.cinema];
+	self.detailMovieController.cinemaToShow = [self.keyValue objectForKey:movie.cinema];
 
 	[self.navigationController pushViewController:self.detailMovieController animated:YES];
 }
@@ -72,6 +75,23 @@
 	
 	return cell;
 
+}
+
+- (NSDictionary *)createNewDictionary
+{
+	NSMutableDictionary *dictionaryToAdd = [NSMutableDictionary dictionary];
+	
+	for (NSDictionary *dictionary in self.rawData) {
+		NSMutableArray *array = [NSMutableArray array];
+		NSString *distance = [dictionary objectForKey:@"km"];
+		NSString *min = [dictionary objectForKey:@"min"];
+		NSString *name = [dictionary objectForKey:@"name"];
+		NSString *lat = [dictionary objectForKey:@"lat_cinema"];
+		NSString *lng = [dictionary objectForKey:@"lng_cinema"];
+		[array addObjectsFromArray:@[distance, min, name, lat, lng]];
+		[dictionaryToAdd setObject:array forKey:name];
+	}
+	return dictionaryToAdd.copy;
 }
 
 NSInteger dateSort(id num1, id num2, void *context)
@@ -97,7 +117,7 @@ NSInteger dateSort(id num1, id num2, void *context)
 	self.arrayToShow = [self.arrayToShow sortedArrayUsingFunction:dateSort context:NULL];
 	self.detailMovieController = [[DetailMovieViewController alloc] initWithNibName:@"DetailMovieViewController" bundle:nil];
 	
-	NSLog(@"cinema location = %@", self.cinemaDurationAndDistance);
+	self.keyValue = [[NSDictionary alloc] initWithDictionary:[self createNewDictionary]];
 }
 
 - (void)didReceiveMemoryWarning

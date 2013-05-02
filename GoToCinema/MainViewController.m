@@ -24,6 +24,7 @@
 @synthesize mvc;
 @synthesize cinemaLocations;
 @synthesize cinemaDistances;
+@synthesize cinemaDistanceDictionary;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,7 +35,7 @@
     return self;
 }
 
-- (NSDictionary *)getDistancesFromCurrentLocation:(CLLocationManager *)location
+- (NSArray *)getDistancesFromCurrentLocation:(CLLocationManager *)location
 {
 //	NSString *longitude = [NSString stringWithFormat:@"%f", location.location.coordinate.longitude];
 //	NSString *latitude = [NSString stringWithFormat:@"%f", location.location.coordinate.latitude];
@@ -151,6 +152,7 @@
 	NSLog(@"array to add %@", arrayToAdd);
 	self.mvc.cinemaLocation = [[NSDictionary alloc] initWithDictionary:[self createArrayOfCinemaLocationsFromRawData:[self parseCinemaLocations]]];
 	self.mvc.arrayToShow = [[NSArray alloc] initWithArray:arrayToAdd.copy];
+	self.mvc.rawData = [[NSArray alloc] initWithArray:self.cinemaDistanceDictionary];
 }
 
 - (NSDictionary *)createDictionaryOfDurationFromArray:(NSArray *)array
@@ -170,42 +172,6 @@
 //	NSLog(@"dictionary to add = %@", dictionaryToAdd);
 	
 	return dictionaryToAdd.copy;
-}
-
-#pragma mark NSURLConnection delegate methods
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-	NSLog(@"received response");
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-	NSLog(@"received data");
-	
-	
-	SBJsonParser *parser = [[SBJsonParser alloc] init];
-	NSString *stringFromData = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-	NSDictionary *dictionary = [NSDictionary dictionary];
-	dictionary = [parser objectWithString:stringFromData];
-	
-	self.cinemaDistances = [[NSArray alloc] initWithArray:[dictionary objectForKey:@"cinema"]];
-	
-	self.mvc = [[MoviesViewController alloc] init];
-	NSLog(@"mvc = %@", self.mvc);
-	
-	self.mvc.cinemaDurationAndDistance = [[NSDictionary alloc] initWithDictionary:[self createDictionaryOfDurationFromArray:self.cinemaDistances]];
-	NSLog(@"distances = %@", self.mvc.cinemaDurationAndDistance);
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-	NSLog(@"failed with error");
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-	NSLog(@"finished loading");
 }
 
 #pragma mark user interaction methods
@@ -265,8 +231,8 @@
 	self.locationManager.distanceFilter = kCLDistanceFilterNone;
 	self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
 	[self.locationManager startUpdatingLocation];
-	
-	NSDictionary *dictionary = [self getDistancesFromCurrentLocation:self.locationManager];
+
+	self.cinemaDistanceDictionary = [self getDistancesFromCurrentLocation:self.locationManager];
 	
 	[self updateDeviceLocation];
 
