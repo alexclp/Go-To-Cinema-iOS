@@ -133,7 +133,7 @@
 	NSDate *date = [NSDate date];
 	NSString *stringFromDate = [dateFormatter stringFromDate:date];
 //	NSDate *currentDate = [dateFormatter dateFromString:stringFromDate];
-	NSDate *currentDate = [dateFormatter dateFromString:@"21:30"];
+	NSDate *currentDate = [dateFormatter dateFromString:@"21:00"];
 	
 	NSMutableArray *arrayToAdd = [NSMutableArray array];
 	NSArray *arrayWithData = [self createArrayOfMoviesFromRawData:self.rawData];
@@ -149,7 +149,6 @@
 		}
 	}
 	
-	NSLog(@"array to add %@", arrayToAdd);
 	self.mvc.cinemaLocation = [[NSDictionary alloc] initWithDictionary:[self createArrayOfCinemaLocationsFromRawData:[self parseCinemaLocations]]];
 	self.mvc.arrayToShow = [[NSArray alloc] initWithArray:arrayToAdd.copy];
 	self.mvc.rawData = [[NSArray alloc] initWithArray:self.cinemaDistanceDictionary];
@@ -168,8 +167,6 @@
 		[arrayToAddData addObject:distance];
 		[dictionaryToAdd setObject:arrayToAddData forKey:cinemaName];
 	}
-	
-//	NSLog(@"dictionary to add = %@", dictionaryToAdd);
 	
 	return dictionaryToAdd.copy;
 }
@@ -225,6 +222,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.rawData = [[NSArray alloc] initWithArray:[self parseRawDataFromURL:[NSURL URLWithString:@"http://parsercinema.eu01.aws.af.cm/date.json"]]];
+	
+//	self.rawData = [[NSArray alloc] initWithArray:[self parseRawDataFromURL:[NSURL URLWithString:@"http://thawing-fortress-7476.herokuapp.com/date.json"]]];
 	self.title = @"Action";
 	
 	self.locationManager = [[CLLocationManager alloc] init];

@@ -94,6 +94,48 @@
 	return dictionaryToAdd.copy;
 }
 
+- (NSString *)timeFormatted:(int)totalSeconds
+{
+	
+    int seconds = totalSeconds % 60;
+    int minutes = (totalSeconds / 60) % 60;
+    int hours = totalSeconds / 3600;
+	
+    return [NSString stringWithFormat:@"%02d:%02d",hours, minutes];
+}
+
+- (void)sortItems
+{
+//	self.arrayToShow = [self sortItemsByTravelDuration];
+	self.arrayToShow = [[NSArray alloc] initWithArray:[self sortItemsByTravelDuration]];
+	[self.tableView reloadData];
+}
+
+- (NSArray *)sortItemsByTravelDuration
+{
+	NSMutableArray *arrayToAdd = [NSMutableArray array];
+	NSDate *currentDate = [NSDate date];
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:@"HH:mm"];
+	NSString *dateString = [dateFormatter stringFromDate:currentDate];
+//	NSDate *startHour = [dateFormatter dateFromString:dateString];
+	NSDate *startHour = [dateFormatter dateFromString:@"12:00"];
+	
+	for (Movie *movie in arrayToShow) {
+		NSString *cinema = movie.cinema;
+		NSString *duration = [[self.keyValue objectForKey:movie.cinema] objectAtIndex:1];
+//		NSLog(@"arrival = %@", [self timeFormatted:duration.intValue]);
+		NSTimeInterval toAdd = duration.intValue;
+		NSDate *endHour = [startHour dateByAddingTimeInterval:toAdd];
+		NSDate *movieHour = [dateFormatter dateFromString:movie.time];
+		if ([endHour compare:movieHour] == NSOrderedAscending) {
+			[arrayToAdd addObject:movie];
+		}
+	}
+	
+	return arrayToAdd.copy;
+}
+
 NSInteger dateSort(id num1, id num2, void *context)
 {
 	Movie *movie1 = (Movie *)num1;
@@ -107,6 +149,20 @@ NSInteger dateSort(id num1, id num2, void *context)
 	return [v1 compare:v2];
 }
 
+/*
+ 
+NSInteger locationSort (id num1, id num2, void *context)
+{
+	Movie *movie1 = (Movie *)num1;
+	Movie *movie2 = (Movie *)num2;
+	
+	NSString *cinema1 = movie1.cinema;
+	NSString *cinema2 = movie2.cinema;
+	
+}
+ 
+*/
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -116,7 +172,6 @@ NSInteger dateSort(id num1, id num2, void *context)
 	self.navigationItem.rightBarButtonItem = sortButton;
 	self.arrayToShow = [self.arrayToShow sortedArrayUsingFunction:dateSort context:NULL];
 	self.detailMovieController = [[DetailMovieViewController alloc] initWithNibName:@"DetailMovieViewController" bundle:nil];
-	
 	self.keyValue = [[NSDictionary alloc] initWithDictionary:[self createNewDictionary]];
 }
 

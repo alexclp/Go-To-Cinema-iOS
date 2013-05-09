@@ -61,7 +61,7 @@
 }
 
 
-#pragma mark View lifecycle
+#pragma mark view lifecycle
 
 - (void)viewDidLoad
 {
