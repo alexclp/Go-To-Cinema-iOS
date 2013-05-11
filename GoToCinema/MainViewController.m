@@ -221,6 +221,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+	
+	self.navigationItem.hidesBackButton = YES;
+	
 	self.rawData = [[NSArray alloc] initWithArray:[self parseRawDataFromURL:[NSURL URLWithString:@"http://parsercinema.eu01.aws.af.cm/date.json"]]];
 	
 //	self.rawData = [[NSArray alloc] initWithArray:[self parseRawDataFromURL:[NSURL URLWithString:@"http://thawing-fortress-7476.herokuapp.com/date.json"]]];
