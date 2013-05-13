@@ -30,13 +30,24 @@
     return self;
 }
 
+- (void)saveToken:(NSString *)token
+{
+	
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	
+	NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"token.txt"];
+
+	[token writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+}
+
 - (NSString *)parseResponse:(NSString *)response
 {
 	SBJsonParser *parser = [[SBJsonParser alloc] init];
 	NSDictionary *result = [parser objectWithString:response];
-//	BOOL status = (BOOL)[result objectForKey:@"loggedIn"];
-//	NSLog(@"status = %@", [result objectForKey:@"loggedIn"]);
+	NSString *token = [NSString stringWithFormat:@"%@", [result objectForKey:@"key"]];
 	NSString *status = [NSString stringWithFormat:@"%@", [result objectForKey:@"loggedIn"]];
+	[self saveToken:token];
 	return status;
 }
 
@@ -72,11 +83,12 @@
 
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-	
+
 	self.title = @"Login screen";
 	
 }

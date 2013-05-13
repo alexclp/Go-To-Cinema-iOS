@@ -12,6 +12,8 @@
 #import "Movie.h"
 #import "Cinema.h"
 #import "LocationTimeOptionViewController.h"
+#import "IIViewDeckController.h"
+#import "LeftSearchViewController.h"
 
 @interface MainViewController ()
 
@@ -237,7 +239,18 @@
 	self.cinemaDistanceDictionary = [self getDistancesFromCurrentLocation:self.locationManager];
 	
 	[self updateDeviceLocation];
-
+	
+	/*
+	// prepare view controllers
+	UIViewController* leftController = [[UIViewController alloc] init];
+	UIViewController* rightController = [[UIViewController alloc] init];
+	
+	IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:self.centerController leftViewController:leftController
+																				   rightViewController:rightController];
+	 */
+	
+	LeftSearchViewController *leftSearchViewController = [[LeftSearchViewController alloc] init];
+//	IIViewDeckController *deckController = [[IIViewDeckController alloc] initWithCenterViewController:self leftViewController:leftSearchViewController];
 }
 
 - (void)didReceiveMemoryWarning
