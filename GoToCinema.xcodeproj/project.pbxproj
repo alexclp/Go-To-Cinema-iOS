@@ -22,9 +22,6 @@
 		FA2E1E9C173E835900F39D5D /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2E1E91173E835900F39D5D /* AFURLConnectionOperation.m */; };
 		FA2E1E9D173E835900F39D5D /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2E1E93173E835900F39D5D /* AFXMLRequestOperation.m */; };
 		FA2E1E9E173E835900F39D5D /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2E1E95173E835900F39D5D /* UIImageView+AFNetworking.m */; };
-		FA2E1EA6173E9E1300F39D5D /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2E1EA1173E9E1300F39D5D /* IISideController.m */; };
-		FA2E1EA7173E9E1300F39D5D /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2E1EA3173E9E1300F39D5D /* IIViewDeckController.m */; };
-		FA2E1EA8173E9E1300F39D5D /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2E1EA5173E9E1300F39D5D /* IIWrapController.m */; };
 		FA2E1EAA173E9E5700F39D5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2E1EA9173E9E5700F39D5D /* QuartzCore.framework */; };
 		FA2E1EAE173E9FF600F39D5D /* LeftSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2E1EAC173E9FF600F39D5D /* LeftSearchViewController.m */; };
 		FA2E1EAF173E9FF600F39D5D /* LeftSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2E1EAD173E9FF600F39D5D /* LeftSearchViewController.xib */; };
@@ -96,12 +93,6 @@
 		FA2E1E93173E835900F39D5D /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		FA2E1E94173E835900F39D5D /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		FA2E1E95173E835900F39D5D /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		FA2E1EA0173E9E1300F39D5D /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISideController.h; sourceTree = "<group>"; };
-		FA2E1EA1173E9E1300F39D5D /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
-		FA2E1EA2173E9E1300F39D5D /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
-		FA2E1EA3173E9E1300F39D5D /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
-		FA2E1EA4173E9E1300F39D5D /* IIWrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIWrapController.h; sourceTree = "<group>"; };
-		FA2E1EA5173E9E1300F39D5D /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIWrapController.m; sourceTree = "<group>"; };
 		FA2E1EA9173E9E5700F39D5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FA2E1EAB173E9FF600F39D5D /* LeftSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSearchViewController.h; sourceTree = "<group>"; };
 		FA2E1EAC173E9FF600F39D5D /* LeftSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSearchViewController.m; sourceTree = "<group>"; };
@@ -225,19 +216,6 @@
 			name = AFNetworking;
 			sourceTree = "<group>";
 		};
-		FA2E1E9F173E9DE200F39D5D /* ViewDeck */ = {
-			isa = PBXGroup;
-			children = (
-				FA2E1EA0173E9E1300F39D5D /* IISideController.h */,
-				FA2E1EA1173E9E1300F39D5D /* IISideController.m */,
-				FA2E1EA2173E9E1300F39D5D /* IIViewDeckController.h */,
-				FA2E1EA3173E9E1300F39D5D /* IIViewDeckController.m */,
-				FA2E1EA4173E9E1300F39D5D /* IIWrapController.h */,
-				FA2E1EA5173E9E1300F39D5D /* IIWrapController.m */,
-			);
-			name = ViewDeck;
-			sourceTree = "<group>";
-		};
 		FA2E1EB01741991000F39D5D /* PKRevealController */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				FA2E1EB01741991000F39D5D /* PKRevealController */,
-				FA2E1E9F173E9DE200F39D5D /* ViewDeck */,
 				FA2E1E82173E830D00F39D5D /* AFNetworking */,
 				FA37CC56171C892B000ADCF0 /* places.json */,
 				FA241D41171566A300BCC84A /* MovieCustomCell */,
@@ -479,9 +456,6 @@
 				FA2E1E9C173E835900F39D5D /* AFURLConnectionOperation.m in Sources */,
 				FA2E1E9D173E835900F39D5D /* AFXMLRequestOperation.m in Sources */,
 				FA2E1E9E173E835900F39D5D /* UIImageView+AFNetworking.m in Sources */,
-				FA2E1EA6173E9E1300F39D5D /* IISideController.m in Sources */,
-				FA2E1EA7173E9E1300F39D5D /* IIViewDeckController.m in Sources */,
-				FA2E1EA8173E9E1300F39D5D /* IIWrapController.m in Sources */,
 				FA2E1EAE173E9FF600F39D5D /* LeftSearchViewController.m in Sources */,
 				FA2E1EB71741992500F39D5D /* PKRevealController.m in Sources */,
 				FA2E1EB81741992500F39D5D /* PKRevealControllerContainerView.m in Sources */,
