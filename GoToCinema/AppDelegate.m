@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "LoginViewController.h"
+#import "PKRevealController.h"
+#import "LeftSearchViewController.h"
 
 @implementation AppDelegate
 
@@ -18,12 +20,19 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
 	
-//	MainViewController *mvc = [[MainViewController alloc] init];
+	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] init]];
+	UIViewController *leftController = [[LeftSearchViewController alloc] init];
+	
+	self.revealController = [PKRevealController revealControllerWithFrontViewController:navigationController leftViewController:leftController options:nil];
+	
+	/*
+	MainViewController *mvc = [[MainViewController alloc] init];
 	LoginViewController *mvc = [[LoginViewController alloc] init];
 	UINavigationController *navcon = [[UINavigationController alloc] init];
 	[navcon pushViewController:mvc animated:NO];
 	[self.window addSubview:navcon.view];
-	self.window.rootViewController = navcon;
+	*/
+	self.window.rootViewController = self.revealController;
     [self.window makeKeyAndVisible];
     return YES;
 }
