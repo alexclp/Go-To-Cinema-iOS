@@ -10,6 +10,7 @@
 #import "SBJson.h"
 #import "AFHTTPClient.h"
 #import "MainViewController.h"
+#import "PKRevealController.h"
 
 @interface LoginViewController ()
 
@@ -70,7 +71,6 @@
 			MainViewController *mvc = [[MainViewController alloc] init];
 			[self.navigationController pushViewController:mvc animated:YES];
 		} else {
-			
 			UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Wrong user name or password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 			[alertView show];
 		}
@@ -80,7 +80,6 @@
 		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Request failed" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alertView show];
 	}];
-
 }
 
 
