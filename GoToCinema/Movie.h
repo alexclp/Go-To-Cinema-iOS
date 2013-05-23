@@ -18,5 +18,9 @@
 @property (strong, nonatomic) NSString *genre;
 @property (strong, nonatomic) NSString *cast;
 @property (strong, nonatomic) NSString *director;
+@property (strong, nonatomic) NSString *movieID;
+@property (strong, nonatomic) NSString *imageLink;
+
++ (Movie *)movieWithCast:(NSString *)cast genre:(NSString *)genre movieID:(NSString *)movieid image:(NSString *)link director:(NSString *)dir englishTitle:(NSString *)en romanianTitle:(NSString *)ro;
 
 @end

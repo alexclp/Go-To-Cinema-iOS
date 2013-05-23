@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LeftSearchViewController : UIViewController
+@interface LeftSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

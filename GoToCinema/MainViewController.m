@@ -51,6 +51,7 @@
 	SBJsonParser *parser = [[SBJsonParser alloc] init];
 	
 	NSString *URLString = [NSString stringWithFormat:@"http://thawing-fortress-7476.herokuapp.com/getDistance.php?lat=%@&lng=%@", latitude, longitude];
+//	NSString *URLString = [NSString stringWithFormat:@"http://cinemadistance.eu01.aws.af.cm/distance?lat=%@&lng=%@", latitude, longitude];
 	NSURL *url = [NSURL URLWithString:URLString];
 	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 	
@@ -68,6 +69,7 @@
 	NSDictionary *result = [parser objectWithString:stringFromData];
 	
 	return [result objectForKey:@"cinema"];
+//	return result;
 }
 
 - (NSArray *)parseCinemaLocations
@@ -103,8 +105,8 @@
 	NSHTTPURLResponse *response = nil;
 	NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 	NSString *stringFromData = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-	NSDictionary *result = [parser objectWithString:stringFromData];
-	return [result objectForKey:@"movies"];
+	NSArray *result = [parser objectWithString:stringFromData];
+	return result;
 }
 
 - (NSArray *)createArrayOfMoviesFromRawData:(NSArray *)data
@@ -113,16 +115,23 @@
 
 	for (NSDictionary *dictionary in data) {
 		Movie *movie = [[Movie alloc] init];
+		movie.cast = [dictionary objectForKey:@"actori"];
+		movie.genre = [dictionary objectForKey:@"gen"];
+		movie.movieID = [dictionary objectForKey:@"id"];
+		movie.imageLink = [dictionary objectForKey:@"image"];
+		movie.rating = [dictionary objectForKey:@"nota"];
 		movie.englishTitle = [dictionary objectForKey:@"titluEn"];
 		movie.romanianTitle = [dictionary objectForKey:@"titluRo"];
-		movie.time = [dictionary objectForKey:@"ora"];
-		movie.cinema = [dictionary objectForKey:@"cinema"];
-		movie.rating = [dictionary objectForKey:@"nota"];
-		movie.genre = [dictionary objectForKey:@"gen"];
-		movie.cast = [dictionary objectForKey:@"actori"];
-		movie.director = [dictionary objectForKey:@"regizor"];
-		[arrayToAdd addObject:movie];
+		
+		NSArray *showTimes = [NSArray arrayWithArray:[dictionary objectForKey:@"showtimes"]];
+		for (NSDictionary *dateLocation in showTimes) {
+			Movie *aux = [Movie movieWithCast:movie.cast genre:movie.genre movieID:movie.movieID image:movie.imageLink director:movie.director englishTitle:movie.englishTitle romanianTitle:movie.romanianTitle];
+			aux.time = [dateLocation objectForKey:@"hour"];
+			aux.cinema = [dateLocation objectForKey:@"place"];
+			[arrayToAdd addObject:aux];
+		}
 	}
+	
 	return arrayToAdd.copy;
 }
 
@@ -227,9 +236,13 @@
 	self.navigationItem.hidesBackButton = YES;
 	self.revealController.recognizesPanningOnFrontView = YES;
 	
-	self.rawData = [[NSArray alloc] initWithArray:[self parseRawDataFromURL:[NSURL URLWithString:@"http://parsercinema.eu01.aws.af.cm/date.json"]]];
+//	self.rawData = [[NSArray alloc] initWithArray:[self parseRawDataFromURL:[NSURL URLWithString:@"http://parsercinema.eu01.aws.af.cm/date.json"]]];
 	
 //	self.rawData = [[NSArray alloc] initWithArray:[self parseRawDataFromURL:[NSURL URLWithString:@"http://thawing-fortress-7476.herokuapp.com/date.json"]]];
+//	http://cinemadistance.eu01.aws.af.cm/movies
+	
+	self.rawData = [[NSArray alloc] initWithArray:[self parseRawDataFromURL:[NSURL URLWithString:@"http://cinemadistance.eu01.aws.af.cm/movies"]]];
+	
 	self.title = @"Action";
 	
 	self.locationManager = [[CLLocationManager alloc] init];

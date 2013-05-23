@@ -14,6 +14,8 @@
 
 @implementation LeftSearchViewController
 
+@synthesize tableView;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -21,6 +23,37 @@
         // Custom initialization
     }
     return self;
+}
+
+#pragma mark UITableView methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	return 3;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (UITableView *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	UITableViewCell *cell = nil;
+	static NSString *identifier = @"cell";
+	
+	cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
+	if (cell == nil) {
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+	}
+	if (indexPath.row == 0) {
+		cell.textLabel.text = @"Profilul tău";
+	} else if (indexPath.row == 1) {
+		cell.textLabel.text = @"Caută alt utilizator";
+	} else if (indexPath.row == 2) {
+		cell.textLabel.text = @"Calculează";
+	}
+	return cell;
 }
 
 - (void)viewDidLoad
