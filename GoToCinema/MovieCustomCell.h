@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *romanianNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cinemaLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *movieImage;
 
 @end

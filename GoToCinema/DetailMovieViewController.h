@@ -27,4 +27,6 @@
 
 @property (strong, nonatomic) NSArray *cinemaToShow;
 
+- (IBAction)openInMaps:(UIButton *)button;
+
 @end

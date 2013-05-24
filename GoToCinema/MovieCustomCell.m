@@ -14,6 +14,7 @@
 @synthesize englishNameLabel;
 @synthesize timeLabel;
 @synthesize cinemaLabel;
+@synthesize movieImage;
 
 - (id)initWithFrame:(CGRect)frame
 {

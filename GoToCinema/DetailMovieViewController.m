@@ -43,7 +43,9 @@
 	int forHours = seconds / 3600;
 	int remainder = seconds % 3600;
 	int forMinutes = remainder / 60;
-	int forSeconds = remainder % 60;	
+	int forSeconds = remainder % 60;
+	self.distanceLabel.text = [NSString stringWithFormat:@"Poti ajunge in %d:%d (%@)", forHours, forMinutes, [self.cinemaToShow objectAtIndex:0]];
+	NSLog(@"ss = %@", self.cinemaToShow);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -53,7 +55,8 @@
 	self.genreLabel.text = self.movieToShow.genre;
 	self.castLabel.text = self.movieToShow.cast;
 	self.directorLabel.text = self.movieToShow.director;
-	self.distanceLabel.text = [self.cinemaToShow objectAtIndex:0];
+	NSLog(@"mmm = %@", movieToShow.director);
+//	self.distanceLabel.text = [self.cinemaToShow objectAtIndex:0];
 
 //	set the MKMapView location to cinema's location
 	
@@ -93,6 +96,30 @@
 	[self updateDurationLabel];
 	
 	[super viewWillAppear:animated];
+}
+
+- (IBAction)openInMaps:(UIButton *)button
+{
+	Class mapItemClass = [MKMapItem class];
+	if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)]) {
+		NSString *latitute = [self.cinemaToShow objectAtIndex:4];
+		NSString *longitude = [self.cinemaToShow objectAtIndex:3];
+		CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitute.doubleValue, longitude.doubleValue);
+		MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate
+													   addressDictionary:nil];
+		MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+		[mapItem setName:self.movieToShow.cinema];
+		
+		// Set the directions mode to "Walking"
+		// Can use MKLaunchOptionsDirectionsModeDriving instead
+		NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
+		// Get the "Current User Location" MKMapItem
+		MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
+		// Pass the current location and destination map items to the Maps app
+		// Set the direction mode in the launchOptions dictionary
+		[MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem]
+					   launchOptions:launchOptions];
+	}
 }
 
 - (void)viewDidLoad

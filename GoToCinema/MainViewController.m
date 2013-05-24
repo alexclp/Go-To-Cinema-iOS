@@ -116,6 +116,7 @@
 	for (NSDictionary *dictionary in data) {
 		Movie *movie = [[Movie alloc] init];
 		movie.cast = [dictionary objectForKey:@"actori"];
+		movie.director = [dictionary objectForKey:@"regizor"];
 		movie.genre = [dictionary objectForKey:@"gen"];
 		movie.movieID = [dictionary objectForKey:@"id"];
 		movie.imageLink = [dictionary objectForKey:@"image"];

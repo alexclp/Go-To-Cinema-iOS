@@ -13,6 +13,9 @@
 #import "SortOptionsModalViewController.h"
 #import "DetailMovieViewController.h"
 
+#import "UIImageView+WebCache.h"
+
+
 @interface MoviesViewController ()
 
 @property (strong, nonatomic) DetailMovieViewController *detailMovieController;
@@ -72,6 +75,8 @@
 	cell.timeLabel.text = currentMovie.time;
 	cell.romanianNameLabel.text = currentMovie.romanianTitle;
 	cell.englishNameLabel.text = currentMovie.englishTitle;
+	
+//	[cell.imageView setImageWithURL:[NSURL URLWithString:currentMovie.imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
 	
 	return cell;
 
