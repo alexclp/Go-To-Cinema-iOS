@@ -55,7 +55,8 @@
 	self.castLabel.text = self.movieToShow.cast;
 	self.directorLabel.text = self.movieToShow.director;
 //	self.distanceLabel.text = [self.cinemaToShow objectAtIndex:0];
-
+	NSLog(@"m = %@", self.movieToShow.rating);
+	
 //	set the MKMapView location to cinema's location
 	
 	// 1

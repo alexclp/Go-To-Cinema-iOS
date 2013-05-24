@@ -40,6 +40,16 @@
     return self;
 }
 
+-(UIImage *) getImageFromURL:(NSString *)fileURL
+{
+    UIImage * result;
+	
+    NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
+    result = [UIImage imageWithData:data];
+	
+    return result;
+}
+
 #pragma mark UITableView methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -77,6 +87,8 @@
 	cell.englishNameLabel.text = currentMovie.englishTitle;
 	
 //	[cell.imageView setImageWithURL:[NSURL URLWithString:currentMovie.imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+	
+	cell.imageView.image = [self getImageFromURL:currentMovie.imageLink];
 	
 	return cell;
 
@@ -172,8 +184,12 @@ NSInteger locationSort (id num1, id num2, void *context)
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-	self.title = @"Movies";
-	UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithTitle:@"Sort" style:UIBarButtonItemStylePlain target:self action:@selector(sortItems)];
+	
+	
+
+	
+	self.title = @"Filme";
+	UIBarButtonItem *sortButton = [[UIBarButtonItem alloc] initWithTitle:@"Sortează" style:UIBarButtonItemStylePlain target:self action:@selector(sortItems)];
 	self.navigationItem.rightBarButtonItem = sortButton;
 	self.arrayToShow = [self.arrayToShow sortedArrayUsingFunction:dateSort context:NULL];
 	self.detailMovieController = [[DetailMovieViewController alloc] initWithNibName:@"DetailMovieViewController" bundle:nil];

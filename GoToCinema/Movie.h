@@ -21,6 +21,6 @@
 @property (strong, nonatomic) NSString *movieID;
 @property (strong, nonatomic) NSString *imageLink;
 
-+ (Movie *)movieWithCast:(NSString *)cast genre:(NSString *)genre movieID:(NSString *)movieid image:(NSString *)link director:(NSString *)dir englishTitle:(NSString *)en romanianTitle:(NSString *)ro;
++ (Movie *)movieWithCast:(NSString *)cast genre:(NSString *)genre movieID:(NSString *)movieid image:(NSString *)link director:(NSString *)dir englishTitle:(NSString *)en romanianTitle:(NSString *)ro rating:(NSString *)nota;
 
 @end

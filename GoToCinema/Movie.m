@@ -21,7 +21,7 @@
 @synthesize movieID;
 @synthesize imageLink;
 
-+ (Movie *)movieWithCast:(NSString *)cast genre:(NSString *)genre movieID:(NSString *)movieid image:(NSString *)link director:(NSString *)dir englishTitle:(NSString *)en romanianTitle:(NSString *)ro
++ (Movie *)movieWithCast:(NSString *)cast genre:(NSString *)genre movieID:(NSString *)movieid image:(NSString *)link director:(NSString *)dir englishTitle:(NSString *)en romanianTitle:(NSString *)ro rating:(NSString *)nota
 {
 	Movie *movie = [[Movie alloc] init];
 	movie.cast = cast;
@@ -31,6 +31,7 @@
 	movie.director = dir;
 	movie.englishTitle = en;
 	movie.romanianTitle = ro;
+	movie.rating = nota;
 	return movie;
 }
 

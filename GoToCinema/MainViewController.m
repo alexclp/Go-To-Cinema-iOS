@@ -126,7 +126,7 @@
 		
 		NSArray *showTimes = [NSArray arrayWithArray:[dictionary objectForKey:@"showtimes"]];
 		for (NSDictionary *dateLocation in showTimes) {
-			Movie *aux = [Movie movieWithCast:movie.cast genre:movie.genre movieID:movie.movieID image:movie.imageLink director:movie.director englishTitle:movie.englishTitle romanianTitle:movie.romanianTitle];
+			Movie *aux = [Movie movieWithCast:movie.cast genre:movie.genre movieID:movie.movieID image:movie.imageLink director:movie.director englishTitle:movie.englishTitle romanianTitle:movie.romanianTitle rating:movie.rating];
 			aux.time = [dateLocation objectForKey:@"hour"];
 			aux.cinema = [dateLocation objectForKey:@"place"];
 			[arrayToAdd addObject:aux];
@@ -233,6 +233,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+	
+	UIBarButtonItem *backButton = [[UIBarButtonItem alloc]
+								   initWithTitle: @"Înapoi"
+								   style: UIBarButtonItemStyleBordered
+								   target: nil action: nil];
+	
+	[self.navigationItem setBackBarButtonItem: backButton];
 	
 	self.navigationItem.hidesBackButton = YES;
 	self.revealController.recognizesPanningOnFrontView = YES;
