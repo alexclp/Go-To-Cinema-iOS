@@ -45,7 +45,6 @@
 	int forMinutes = remainder / 60;
 	int forSeconds = remainder % 60;
 	self.distanceLabel.text = [NSString stringWithFormat:@"Poti ajunge in %d:%d (%@)", forHours, forMinutes, [self.cinemaToShow objectAtIndex:0]];
-	NSLog(@"ss = %@", self.cinemaToShow);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -55,7 +54,6 @@
 	self.genreLabel.text = self.movieToShow.genre;
 	self.castLabel.text = self.movieToShow.cast;
 	self.directorLabel.text = self.movieToShow.director;
-	NSLog(@"mmm = %@", movieToShow.director);
 //	self.distanceLabel.text = [self.cinemaToShow objectAtIndex:0];
 
 //	set the MKMapView location to cinema's location
@@ -102,8 +100,8 @@
 {
 	Class mapItemClass = [MKMapItem class];
 	if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)]) {
-		NSString *latitute = [self.cinemaToShow objectAtIndex:4];
-		NSString *longitude = [self.cinemaToShow objectAtIndex:3];
+		NSString *latitute = [self.cinemaToShow objectAtIndex:3];
+		NSString *longitude = [self.cinemaToShow objectAtIndex:4];
 		CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitute.doubleValue, longitude.doubleValue);
 		MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate
 													   addressDictionary:nil];
