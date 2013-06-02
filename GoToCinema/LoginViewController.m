@@ -87,9 +87,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
+	self.revealController.recognizesPanningOnFrontView = NO;
 	self.title = @"Login screen";
 	
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	self.revealController.recognizesPanningOnFrontView = NO;
+	
+	[super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

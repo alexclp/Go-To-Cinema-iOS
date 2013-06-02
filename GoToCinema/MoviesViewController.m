@@ -12,6 +12,7 @@
 #import "MovieCustomCell.h"
 #import "SortOptionsModalViewController.h"
 #import "DetailMovieViewController.h"
+#import "AFHTTPClient.h"
 
 #import "UIImageView+WebCache.h"
 
@@ -86,9 +87,15 @@
 	cell.romanianNameLabel.text = currentMovie.romanianTitle;
 	cell.englishNameLabel.text = currentMovie.englishTitle;
 	
-//	[cell.imageView setImageWithURL:[NSURL URLWithString:currentMovie.imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+	/*
+	[cell.imageView setImageWithURL:[NSURL URLWithString:currentMovie.imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
 	
 	cell.imageView.image = [self getImageFromURL:currentMovie.imageLink];
+	 */
+//	[imageView setImageWithURL:[NSURL URLWithString:@"http://i.imgur.com/r4uwx.jpg"] placeholderImage:[UIImage imageNamed:@"placeholder-avatar"]];
+	NSLog(@"%@", currentMovie.imageLink);
+	[cell.imageView setImageWithURL:[NSURL URLWithString:currentMovie.imageLink]];
+	
 	
 	return cell;
 
