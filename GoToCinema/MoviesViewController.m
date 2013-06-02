@@ -13,9 +13,7 @@
 #import "SortOptionsModalViewController.h"
 #import "DetailMovieViewController.h"
 #import "AFHTTPClient.h"
-
-#import "UIImageView+WebCache.h"
-
+#import "UIImageView+AFNetworking.h"
 
 @interface MoviesViewController ()
 
@@ -72,7 +70,7 @@
 	[self.navigationController pushViewController:self.detailMovieController animated:YES];
 }
 
-- (UITableView *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	static NSString *CellIdentifier = @"Movie Cell";
     
@@ -87,18 +85,19 @@
 	cell.romanianNameLabel.text = currentMovie.romanianTitle;
 	cell.englishNameLabel.text = currentMovie.englishTitle;
 	
-	/*
-	[cell.imageView setImageWithURL:[NSURL URLWithString:currentMovie.imageLink] placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-	
-	cell.imageView.image = [self getImageFromURL:currentMovie.imageLink];
-	 */
-//	[imageView setImageWithURL:[NSURL URLWithString:@"http://i.imgur.com/r4uwx.jpg"] placeholderImage:[UIImage imageNamed:@"placeholder-avatar"]];
-	NSLog(@"%@", currentMovie.imageLink);
-	[cell.imageView setImageWithURL:[NSURL URLWithString:currentMovie.imageLink]];
-	
+	 __weak UITableViewCell *weakCell = cell;
+	[cell.imageView setImageWithURLRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:currentMovie.imageLink]]
+	   placeholderImage:[UIImage imageNamed:@"placeholder.png"]
+									success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
+										weakCell.imageView.image = image;
+										[weakCell setNeedsLayout];
+		   
+									}
+									failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error){
+		    
+									}];
 	
 	return cell;
-
 }
 
 - (NSDictionary *)createNewDictionary
@@ -172,20 +171,6 @@ NSInteger dateSort(id num1, id num2, void *context)
 	
 	return [v1 compare:v2];
 }
-
-/*
- 
-NSInteger locationSort (id num1, id num2, void *context)
-{
-	Movie *movie1 = (Movie *)num1;
-	Movie *movie2 = (Movie *)num2;
-	
-	NSString *cinema1 = movie1.cinema;
-	NSString *cinema2 = movie2.cinema;
-	
-}
- 
-*/
 
 - (void)viewDidLoad
 {
