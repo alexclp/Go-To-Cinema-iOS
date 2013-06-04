@@ -32,24 +32,23 @@
     return self;
 }
 
-- (void)saveToken:(NSString *)token
+- (void)saveLoginData:(NSDictionary *)data
 {
 	
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	
-	NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"token.txt"];
+	NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"data.plist"];
 
-	[token writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+	[data writeToFile:filePath atomically:YES];
 }
 
 - (NSString *)parseResponse:(NSString *)response
 {
 	SBJsonParser *parser = [[SBJsonParser alloc] init];
 	NSDictionary *result = [parser objectWithString:response];
-	NSString *token = [NSString stringWithFormat:@"%@", [result objectForKey:@"key"]];
 	NSString *status = [NSString stringWithFormat:@"%@", [result objectForKey:@"loggedIn"]];
-	[self saveToken:token];
+	[self saveLoginData:result];
 	return status;
 }
 
