@@ -63,6 +63,8 @@
 	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
 							self.user.text, @"username",
 							self.password.text, @"password", nil];
+	
+
 	[httpClient postPath:@"/user/login" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
 		
 		NSString *responseString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
@@ -89,7 +91,8 @@
     // Do any additional setup after loading the view from its nib.
 	self.revealController.recognizesPanningOnFrontView = NO;
 	self.title = @"Login screen";
-	
+	self.user.text = @"alex";
+	self.password.text = @"1234";
 }
 
 
