@@ -51,6 +51,8 @@
 		FA395A4E17140AB700558196 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A4317140AB600558196 /* SBJsonStreamWriterState.m */; };
 		FA395A4F17140AB700558196 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A4517140AB700558196 /* SBJsonWriter.m */; };
 		FA395A5317140B5A00558196 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A5217140B5900558196 /* Movie.m */; };
+		FA5B1DDB175EA4B8000C0AE4 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5B1DD9175EA4B8000C0AE4 /* MyProfileViewController.m */; };
+		FA5B1DDC175EA4B8000C0AE4 /* MyProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5B1DDA175EA4B8000C0AE4 /* MyProfileViewController.xib */; };
 		FA91DFD0173C4D65004932A9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91DFCE173C4D65004932A9 /* LoginViewController.m */; };
 		FA91DFD1173C4D65004932A9 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA91DFCF173C4D65004932A9 /* LoginViewController.xib */; };
 		FA951EC1175E689300FC00C0 /* CustomCellWallSuper.m in Sources */ = {isa = PBXBuildFile; fileRef = FA951EC0175E689300FC00C0 /* CustomCellWallSuper.m */; };
@@ -153,6 +155,9 @@
 		FA395A4517140AB700558196 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		FA395A5117140B5900558196 /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		FA395A5217140B5900558196 /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		FA5B1DD8175EA4B8000C0AE4 /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
+		FA5B1DD9175EA4B8000C0AE4 /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
+		FA5B1DDA175EA4B8000C0AE4 /* MyProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyProfileViewController.xib; sourceTree = "<group>"; };
 		FA91DFCD173C4D65004932A9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FA91DFCE173C4D65004932A9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FA91DFCF173C4D65004932A9 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -295,8 +300,9 @@
 				FA2E1EAB173E9FF600F39D5D /* LeftSearchViewController.h */,
 				FA2E1EAC173E9FF600F39D5D /* LeftSearchViewController.m */,
 				FA2E1EAD173E9FF600F39D5D /* LeftSearchViewController.xib */,
+				FA5B1DD7175EA49A000C0AE4 /* My Profile */,
 				FAF6BCE2175E5A3A009A60D4 /* Model */,
-				FAF6BCE1175E5A1F009A60D4 /* Filme */,
+				FAF6BCE1175E5A1F009A60D4 /* Movies */,
 				FAF6BCE3175E5A57009A60D4 /* Search + Wall */,
 				FAC5B4801715D961008C7828 /* LocationTimeOptionViewController.h */,
 				FAC5B4811715D962008C7828 /* LocationTimeOptionViewController.m */,
@@ -336,6 +342,17 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		FA5B1DD7175EA49A000C0AE4 /* My Profile */ = {
+			isa = PBXGroup;
+			children = (
+				FA5B1DD8175EA4B8000C0AE4 /* MyProfileViewController.h */,
+				FA5B1DD9175EA4B8000C0AE4 /* MyProfileViewController.m */,
+				FA5B1DDA175EA4B8000C0AE4 /* MyProfileViewController.xib */,
+			);
+			name = "My Profile";
+			path = ..;
+			sourceTree = "<group>";
+		};
 		FAC5B4701715672F008C7828 /* JSON Parser */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,7 +381,7 @@
 			name = "JSON Parser";
 			sourceTree = "<group>";
 		};
-		FAF6BCE1175E5A1F009A60D4 /* Filme */ = {
+		FAF6BCE1175E5A1F009A60D4 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
 				FA395A2C171404C400558196 /* MainViewController.h */,
@@ -377,7 +394,7 @@
 				FAD20F8A1719761F0053160D /* DetailMovieViewController.m */,
 				FAD20F8B1719761F0053160D /* DetailMovieViewController.xib */,
 			);
-			name = Filme;
+			name = Movies;
 			sourceTree = "<group>";
 		};
 		FAF6BCE2175E5A3A009A60D4 /* Model */ = {
@@ -486,6 +503,7 @@
 				FAF6BCD9175E4280009A60D4 /* SearchUsersViewController.xib in Resources */,
 				FAF6BCE8175E5A8E009A60D4 /* WallViewController.xib in Resources */,
 				FA951EC6175E68AD00FC00C0 /* WallCustomCell.xib in Resources */,
+				FA5B1DDC175EA4B8000C0AE4 /* MyProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +552,7 @@
 				FAF6BCE7175E5A8E009A60D4 /* WallViewController.m in Sources */,
 				FA951EC1175E689300FC00C0 /* CustomCellWallSuper.m in Sources */,
 				FA951EC4175E68A100FC00C0 /* WallCustomCell.m in Sources */,
+				FA5B1DDB175EA4B8000C0AE4 /* MyProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

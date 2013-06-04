@@ -58,6 +58,13 @@
 	return cell;
 }
 
+#pragma mark user interaction
+
+- (void)postToUserWall:(UIButton *)button
+{
+	
+}
+
 #pragma mark view methods
 
 - (void)viewDidLoad
@@ -66,6 +73,9 @@
     // Do any additional setup after loading the view from its nib.
 	
 	self.title = @"Wall";
+	
+	
+	NSLog(@"wall = %@", self.wallInfo);
 	
 	self.dateOfBirth.text = [self.wallInfo objectForKey:@"DOB"];
 	[self.profilePic setImageWithURL:[NSURL URLWithString:[self.wallInfo objectForKey:@"image"]]];
