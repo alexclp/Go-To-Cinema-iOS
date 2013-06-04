@@ -9,6 +9,7 @@
 #import "LeftSearchViewController.h"
 #import "SearchUsersViewController.h"
 #import "PKRevealController.h"
+#import "MainViewController.h"
 
 @interface LeftSearchViewController ()
 
@@ -45,7 +46,10 @@
 		[self.revealController setFrontViewController:navController];
 		[self.revealController showViewController:self.revealController.frontViewController];
 	} else if (indexPath.row == 2) {
-		
+		MainViewController *mvc = [[MainViewController alloc] init];
+		UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:mvc];
+		[self.revealController setFrontViewController:navController];
+		[self.revealController showViewController:self.revealController.frontViewController];
 	}
 }
 

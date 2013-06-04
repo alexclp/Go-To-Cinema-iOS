@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WallViewController : UIViewController
+@interface WallViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *profilePic;
 @property (weak, nonatomic) IBOutlet UILabel *username;
@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *posts;
 
 @property (strong, nonatomic) NSDictionary *wallInfo;
+@property (strong, nonatomic) NSArray *wallPosts;
 
 - (IBAction)postToUserWall:(UIButton *)button;
 
