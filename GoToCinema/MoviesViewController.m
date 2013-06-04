@@ -10,7 +10,6 @@
 #import "MoviesViewController.h"
 #import "Movie.h"
 #import "MovieCustomCell.h"
-#import "SortOptionsModalViewController.h"
 #import "DetailMovieViewController.h"
 #import "AFHTTPClient.h"
 #import "UIImageView+AFNetworking.h"

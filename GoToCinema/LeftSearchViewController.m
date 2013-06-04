@@ -36,7 +36,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+//	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 	if (indexPath.row == 0) {
 		
 	} else if (indexPath.row == 1) {
@@ -63,7 +63,7 @@
 	} else if (indexPath.row == 1) {
 		cell.textLabel.text = @"Caută alt utilizator";
 	} else if (indexPath.row == 2) {
-		cell.textLabel.text = @"Calculează";
+		cell.textLabel.text = @"Filme";
 	}
 	return cell;
 }

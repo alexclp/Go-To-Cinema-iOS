@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *searchData;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *searchResult;
+@property (strong, nonatomic) NSDictionary *dataToSend;
 
 @end

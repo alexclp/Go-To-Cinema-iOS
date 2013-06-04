@@ -14,7 +14,6 @@
 #import "LocationTimeOptionViewController.h"
 #import "LeftSearchViewController.h"
 #import "PKRevealController.h"
-#import "SortOptionsModalViewController.h"
 
 @interface MainViewController ()
 

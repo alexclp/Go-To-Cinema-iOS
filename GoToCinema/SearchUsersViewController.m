@@ -8,6 +8,7 @@
 
 #import "SearchUsersViewController.h"
 #import "AFJSONRequestOperation.h"
+#import "WallViewController.h"
 
 @interface SearchUsersViewController ()
 
@@ -18,7 +19,7 @@
 @synthesize searchData;
 @synthesize tableView;
 @synthesize searchResult;
-
+@synthesize dataToSend;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,14 +35,12 @@
 //	http://cinemadistance.eu01.aws.af.cm/user/search?=aa
 	
 	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://cinemadistance.eu01.aws.af.cm/user/search?=%@", self.searchData.text]];
-	NSLog(@"url = %@", url);
 	NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-		NSLog(@"json = %@", JSON);
 		self.searchResult = (NSArray *)JSON;
 		[self handleDataFromSearchResult];
 	} failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"%@", error] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failed to get users" message:[NSString stringWithFormat:@"%@", error] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alert show];
 		NSLog(@"error while searching = %@", error);
 	}];
@@ -63,6 +62,21 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	WallViewController *wl = [[WallViewController alloc] init];
+	
+	NSDictionary *selectedUser = [self.searchResult objectAtIndex:indexPath.row];
+	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://cinemadistance.eu01.aws.af.cm/user/%@/wall", [selectedUser objectForKey:@"id"]]];
+	NSURLRequest *request = [NSURLRequest requestWithURL:url];
+	AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+		self.dataToSend = (NSDictionary *)JSON;
+		wl.wallInfo = [[NSDictionary alloc] initWithDictionary:self.dataToSend];
+		[self.navigationController pushViewController:wl animated:YES];
+	} failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failed to get wall" message:[NSString stringWithFormat:@"%@", error] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		[alert show];
+	}];
+	[operation start];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -98,6 +112,7 @@
 											 selector:@selector(textFieldChanged)
 												 name:UITextFieldTextDidChangeNotification
 											   object:self.searchData];
+	self.title = @"Search users";
 }
 
 - (void)didReceiveMemoryWarning

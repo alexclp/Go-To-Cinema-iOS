@@ -53,8 +53,6 @@
 		FA395A5317140B5A00558196 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = FA395A5217140B5900558196 /* Movie.m */; };
 		FA91DFD0173C4D65004932A9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91DFCE173C4D65004932A9 /* LoginViewController.m */; };
 		FA91DFD1173C4D65004932A9 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA91DFCF173C4D65004932A9 /* LoginViewController.xib */; };
-		FAC5B47417156C99008C7828 /* SortOptionsModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC5B47217156C99008C7828 /* SortOptionsModalViewController.m */; };
-		FAC5B47517156C99008C7828 /* SortOptionsModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC5B47317156C99008C7828 /* SortOptionsModalViewController.xib */; };
 		FAC5B4831715D962008C7828 /* LocationTimeOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC5B4811715D962008C7828 /* LocationTimeOptionViewController.m */; };
 		FAC5B4841715D962008C7828 /* LocationTimeOptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC5B4821715D962008C7828 /* LocationTimeOptionViewController.xib */; };
 		FAC5B4861715DAE4008C7828 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5B4851715DAE4008C7828 /* CoreLocation.framework */; };
@@ -68,6 +66,8 @@
 		FAD20F8D1719761F0053160D /* DetailMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD20F8B1719761F0053160D /* DetailMovieViewController.xib */; };
 		FAF6BCD8175E4280009A60D4 /* SearchUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6BCD6175E427F009A60D4 /* SearchUsersViewController.m */; };
 		FAF6BCD9175E4280009A60D4 /* SearchUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF6BCD7175E427F009A60D4 /* SearchUsersViewController.xib */; };
+		FAF6BCE7175E5A8E009A60D4 /* WallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6BCE5175E5A8E009A60D4 /* WallViewController.m */; };
+		FAF6BCE8175E5A8E009A60D4 /* WallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF6BCE6175E5A8E009A60D4 /* WallViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,9 +153,6 @@
 		FA91DFCD173C4D65004932A9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FA91DFCE173C4D65004932A9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FA91DFCF173C4D65004932A9 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		FAC5B47117156C99008C7828 /* SortOptionsModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortOptionsModalViewController.h; sourceTree = "<group>"; };
-		FAC5B47217156C99008C7828 /* SortOptionsModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortOptionsModalViewController.m; sourceTree = "<group>"; };
-		FAC5B47317156C99008C7828 /* SortOptionsModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SortOptionsModalViewController.xib; sourceTree = "<group>"; };
 		FAC5B4801715D961008C7828 /* LocationTimeOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTimeOptionViewController.h; sourceTree = "<group>"; };
 		FAC5B4811715D962008C7828 /* LocationTimeOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTimeOptionViewController.m; sourceTree = "<group>"; };
 		FAC5B4821715D962008C7828 /* LocationTimeOptionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationTimeOptionViewController.xib; sourceTree = "<group>"; };
@@ -172,6 +169,9 @@
 		FAF6BCD5175E427F009A60D4 /* SearchUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchUsersViewController.h; sourceTree = "<group>"; };
 		FAF6BCD6175E427F009A60D4 /* SearchUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchUsersViewController.m; sourceTree = "<group>"; };
 		FAF6BCD7175E427F009A60D4 /* SearchUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchUsersViewController.xib; sourceTree = "<group>"; };
+		FAF6BCE4175E5A8E009A60D4 /* WallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallViewController.h; sourceTree = "<group>"; };
+		FAF6BCE5175E5A8E009A60D4 /* WallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallViewController.m; sourceTree = "<group>"; };
+		FAF6BCE6175E5A8E009A60D4 /* WallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,31 +281,15 @@
 				FA395A1E1714040D00558196 /* AppDelegate.h */,
 				FA395A1F1714040D00558196 /* AppDelegate.m */,
 				FAC5B48B17160E73008C7828 /* MainWindow.xib */,
-				FA395A5117140B5900558196 /* Movie.h */,
-				FA395A5217140B5900558196 /* Movie.m */,
-				FA37CC58171CB398000ADCF0 /* Cinema.h */,
-				FA37CC59171CB398000ADCF0 /* Cinema.m */,
-				FA2E1EAB173E9FF600F39D5D /* LeftSearchViewController.h */,
-				FA2E1EAC173E9FF600F39D5D /* LeftSearchViewController.m */,
-				FA2E1EAD173E9FF600F39D5D /* LeftSearchViewController.xib */,
 				FA91DFCD173C4D65004932A9 /* LoginViewController.h */,
 				FA91DFCE173C4D65004932A9 /* LoginViewController.m */,
 				FA91DFCF173C4D65004932A9 /* LoginViewController.xib */,
-				FA395A2C171404C400558196 /* MainViewController.h */,
-				FA395A2D171404C400558196 /* MainViewController.m */,
-				FA241D351714D4C500BCC84A /* MainViewController.xib */,
-				FA2CC75F1714CFBB00DDEFC4 /* MoviesViewController.h */,
-				FA2CC7601714CFBB00DDEFC4 /* MoviesViewController.m */,
-				FA241D371714D4F600BCC84A /* MoviesViewController.xib */,
-				FAD20F891719761F0053160D /* DetailMovieViewController.h */,
-				FAD20F8A1719761F0053160D /* DetailMovieViewController.m */,
-				FAD20F8B1719761F0053160D /* DetailMovieViewController.xib */,
-				FAF6BCD5175E427F009A60D4 /* SearchUsersViewController.h */,
-				FAF6BCD6175E427F009A60D4 /* SearchUsersViewController.m */,
-				FAF6BCD7175E427F009A60D4 /* SearchUsersViewController.xib */,
-				FAC5B47117156C99008C7828 /* SortOptionsModalViewController.h */,
-				FAC5B47217156C99008C7828 /* SortOptionsModalViewController.m */,
-				FAC5B47317156C99008C7828 /* SortOptionsModalViewController.xib */,
+				FA2E1EAB173E9FF600F39D5D /* LeftSearchViewController.h */,
+				FA2E1EAC173E9FF600F39D5D /* LeftSearchViewController.m */,
+				FA2E1EAD173E9FF600F39D5D /* LeftSearchViewController.xib */,
+				FAF6BCE2175E5A3A009A60D4 /* Model */,
+				FAF6BCE1175E5A1F009A60D4 /* Filme */,
+				FAF6BCE3175E5A57009A60D4 /* Search + Wall */,
 				FAC5B4801715D961008C7828 /* LocationTimeOptionViewController.h */,
 				FAC5B4811715D962008C7828 /* LocationTimeOptionViewController.m */,
 				FAC5B4821715D962008C7828 /* LocationTimeOptionViewController.xib */,
@@ -371,6 +355,46 @@
 			name = "JSON Parser";
 			sourceTree = "<group>";
 		};
+		FAF6BCE1175E5A1F009A60D4 /* Filme */ = {
+			isa = PBXGroup;
+			children = (
+				FA395A2C171404C400558196 /* MainViewController.h */,
+				FA395A2D171404C400558196 /* MainViewController.m */,
+				FA241D351714D4C500BCC84A /* MainViewController.xib */,
+				FA2CC75F1714CFBB00DDEFC4 /* MoviesViewController.h */,
+				FA2CC7601714CFBB00DDEFC4 /* MoviesViewController.m */,
+				FA241D371714D4F600BCC84A /* MoviesViewController.xib */,
+				FAD20F891719761F0053160D /* DetailMovieViewController.h */,
+				FAD20F8A1719761F0053160D /* DetailMovieViewController.m */,
+				FAD20F8B1719761F0053160D /* DetailMovieViewController.xib */,
+			);
+			name = Filme;
+			sourceTree = "<group>";
+		};
+		FAF6BCE2175E5A3A009A60D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA395A5117140B5900558196 /* Movie.h */,
+				FA395A5217140B5900558196 /* Movie.m */,
+				FA37CC58171CB398000ADCF0 /* Cinema.h */,
+				FA37CC59171CB398000ADCF0 /* Cinema.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FAF6BCE3175E5A57009A60D4 /* Search + Wall */ = {
+			isa = PBXGroup;
+			children = (
+				FAF6BCD5175E427F009A60D4 /* SearchUsersViewController.h */,
+				FAF6BCD6175E427F009A60D4 /* SearchUsersViewController.m */,
+				FAF6BCD7175E427F009A60D4 /* SearchUsersViewController.xib */,
+				FAF6BCE4175E5A8E009A60D4 /* WallViewController.h */,
+				FAF6BCE5175E5A8E009A60D4 /* WallViewController.m */,
+				FAF6BCE6175E5A8E009A60D4 /* WallViewController.xib */,
+			);
+			name = "Search + Wall";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -429,7 +453,6 @@
 				FA241D361714D4C500BCC84A /* MainViewController.xib in Resources */,
 				FA241D381714D4F600BCC84A /* MoviesViewController.xib in Resources */,
 				FA241D401715669D00BCC84A /* MovieCustomCell.xib in Resources */,
-				FAC5B47517156C99008C7828 /* SortOptionsModalViewController.xib in Resources */,
 				FAC5B4841715D962008C7828 /* LocationTimeOptionViewController.xib in Resources */,
 				FAC5B48C17160E74008C7828 /* MainWindow.xib in Resources */,
 				FAD20F8D1719761F0053160D /* DetailMovieViewController.xib in Resources */,
@@ -440,6 +463,7 @@
 				FAC65F36175D2D5B00F88922 /* rounded_table_cell_bottom@2x.png in Resources */,
 				FAC65F37175D2D5B00F88922 /* rounded_table_cell_top@2x.png in Resources */,
 				FAF6BCD9175E4280009A60D4 /* SearchUsersViewController.xib in Resources */,
+				FAF6BCE8175E5A8E009A60D4 /* WallViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,7 +491,6 @@
 				FA2CC7611714CFBB00DDEFC4 /* MoviesViewController.m in Sources */,
 				FA241D3B1715667D00BCC84A /* CustomCellSuper.m in Sources */,
 				FA241D3E1715669200BCC84A /* MovieCustomCell.m in Sources */,
-				FAC5B47417156C99008C7828 /* SortOptionsModalViewController.m in Sources */,
 				FAC5B4831715D962008C7828 /* LocationTimeOptionViewController.m in Sources */,
 				FAD20F8C1719761F0053160D /* DetailMovieViewController.m in Sources */,
 				FA37CC5A171CB398000ADCF0 /* Cinema.m in Sources */,
@@ -486,6 +509,7 @@
 				FA2E1EB81741992500F39D5D /* PKRevealControllerContainerView.m in Sources */,
 				FA2E1EB91741992500F39D5D /* UIViewController+PKRevealController.m in Sources */,
 				FAF6BCD8175E4280009A60D4 /* SearchUsersViewController.m in Sources */,
+				FAF6BCE7175E5A8E009A60D4 /* WallViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
