@@ -21,6 +21,7 @@
 @synthesize user;
 @synthesize password;
 @synthesize loginButton;
+@synthesize scrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -82,15 +83,15 @@
 	}];
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	self.revealController.recognizesPanningOnFrontView = NO;
 	self.title = @"Login screen";
-	self.view.backgroundColor = [UIColor colorWithRed:217.0 green:68.0 blue:54.0 alpha:1.0];
+	
 }
+
 
 - (void)viewWillAppear:(BOOL)animated
 {

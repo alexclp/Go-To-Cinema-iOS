@@ -13,6 +13,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *user;
 @property (strong, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+
 - (IBAction)login:(UIButton *)button;
 
 @end
