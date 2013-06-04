@@ -18,7 +18,7 @@
 @synthesize searchData;
 @synthesize tableView;
 @synthesize searchResult;
-@synthesize usersArray;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,9 +34,11 @@
 //	http://cinemadistance.eu01.aws.af.cm/user/search?=aa
 	
 	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://cinemadistance.eu01.aws.af.cm/user/search?=%@", self.searchData.text]];
+	NSLog(@"url = %@", url);
 	NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-		self.searchResult = [[NSDictionary alloc] initWithDictionary:(NSDictionary *) JSON];
+		NSLog(@"json = %@", JSON);
+		self.searchResult = (NSArray *)JSON;
 		[self handleDataFromSearchResult];
 	} failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"%@", error] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -48,7 +50,6 @@
 
 - (void)handleDataFromSearchResult
 {
-	self.usersArray = [[NSArray alloc] initWithArray:[self.searchResult allKeys]];
 	[self.tableView reloadData];
 }
 
@@ -56,7 +57,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [self.searchResult allKeys].count;
+	return self.searchResult.count;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -74,14 +75,17 @@
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
 	}
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-	cell.textLabel.text = [self.usersArray objectAtIndex:indexPath.row];
+	
+	NSDictionary *user = [self.searchResult objectAtIndex:indexPath.row];
+	
+	cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", [user objectForKey:@"nume"], [user objectForKey:@"prenume"]];
+	
 	return cell;
 }
 
 
-#pragma mark UITextField delegate methods
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField
+- (void)textFieldChanged
 {
 	[self search];
 }
@@ -90,6 +94,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(textFieldChanged)
+												 name:UITextFieldTextDidChangeNotification
+											   object:self.searchData];
 }
 
 - (void)didReceiveMemoryWarning

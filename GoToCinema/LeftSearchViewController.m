@@ -7,6 +7,8 @@
 //
 
 #import "LeftSearchViewController.h"
+#import "SearchUsersViewController.h"
+#import "PKRevealController.h"
 
 @interface LeftSearchViewController ()
 
@@ -35,9 +37,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+	if (indexPath.row == 0) {
+		
+	} else if (indexPath.row == 1) {
+		SearchUsersViewController *vc = [[SearchUsersViewController alloc] init];
+		UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:vc];
+		[self.revealController setFrontViewController:navController];
+		[self.revealController showViewController:self.revealController.frontViewController];
+	} else if (indexPath.row == 2) {
+		
+	}
 }
 
-- (UITableView *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	UITableViewCell *cell = nil;
 	static NSString *identifier = @"cell";
