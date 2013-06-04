@@ -14,6 +14,7 @@
 #import "LocationTimeOptionViewController.h"
 #import "LeftSearchViewController.h"
 #import "PKRevealController.h"
+#import "SortOptionsModalViewController.h"
 
 @interface MainViewController ()
 
@@ -144,8 +145,8 @@
 	[dateFormatter setDateFormat:@"HH:mm"];
 	NSDate *date = [NSDate date];
 	NSString *stringFromDate = [dateFormatter stringFromDate:date];
-//	NSDate *currentDate = [dateFormatter dateFromString:stringFromDate];
-	NSDate *currentDate = [dateFormatter dateFromString:@"21:00"];
+	NSDate *currentDate = [dateFormatter dateFromString:stringFromDate];
+//	NSDate *currentDate = [dateFormatter dateFromString:@"21:00"];
 	
 	NSMutableArray *arrayToAdd = [NSMutableArray array];
 	NSArray *arrayWithData = [self createArrayOfMoviesFromRawData:self.rawData];
@@ -261,6 +262,7 @@
 	self.cinemaDistanceDictionary = [self getDistancesFromCurrentLocation:self.locationManager];
 	
 	[self updateDeviceLocation];
+	
 }
 
 - (void)didReceiveMemoryWarning

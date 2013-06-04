@@ -66,6 +66,8 @@
 		FAD1C865174EDF4400E03453 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD1C864174EDF4400E03453 /* placeholder.png */; };
 		FAD20F8C1719761F0053160D /* DetailMovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD20F8A1719761F0053160D /* DetailMovieViewController.m */; };
 		FAD20F8D1719761F0053160D /* DetailMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD20F8B1719761F0053160D /* DetailMovieViewController.xib */; };
+		FAF6BCD8175E4280009A60D4 /* SearchUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF6BCD6175E427F009A60D4 /* SearchUsersViewController.m */; };
+		FAF6BCD9175E4280009A60D4 /* SearchUsersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF6BCD7175E427F009A60D4 /* SearchUsersViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -167,6 +169,9 @@
 		FAD20F891719761F0053160D /* DetailMovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailMovieViewController.h; sourceTree = "<group>"; };
 		FAD20F8A1719761F0053160D /* DetailMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailMovieViewController.m; sourceTree = "<group>"; };
 		FAD20F8B1719761F0053160D /* DetailMovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailMovieViewController.xib; sourceTree = "<group>"; };
+		FAF6BCD5175E427F009A60D4 /* SearchUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchUsersViewController.h; sourceTree = "<group>"; };
+		FAF6BCD6175E427F009A60D4 /* SearchUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchUsersViewController.m; sourceTree = "<group>"; };
+		FAF6BCD7175E427F009A60D4 /* SearchUsersViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchUsersViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +300,9 @@
 				FAD20F891719761F0053160D /* DetailMovieViewController.h */,
 				FAD20F8A1719761F0053160D /* DetailMovieViewController.m */,
 				FAD20F8B1719761F0053160D /* DetailMovieViewController.xib */,
+				FAF6BCD5175E427F009A60D4 /* SearchUsersViewController.h */,
+				FAF6BCD6175E427F009A60D4 /* SearchUsersViewController.m */,
+				FAF6BCD7175E427F009A60D4 /* SearchUsersViewController.xib */,
 				FAC5B47117156C99008C7828 /* SortOptionsModalViewController.h */,
 				FAC5B47217156C99008C7828 /* SortOptionsModalViewController.m */,
 				FAC5B47317156C99008C7828 /* SortOptionsModalViewController.xib */,
@@ -431,6 +439,7 @@
 				FAD1C865174EDF4400E03453 /* placeholder.png in Resources */,
 				FAC65F36175D2D5B00F88922 /* rounded_table_cell_bottom@2x.png in Resources */,
 				FAC65F37175D2D5B00F88922 /* rounded_table_cell_top@2x.png in Resources */,
+				FAF6BCD9175E4280009A60D4 /* SearchUsersViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +485,7 @@
 				FA2E1EB71741992500F39D5D /* PKRevealController.m in Sources */,
 				FA2E1EB81741992500F39D5D /* PKRevealControllerContainerView.m in Sources */,
 				FA2E1EB91741992500F39D5D /* UIViewController+PKRevealController.m in Sources */,
+				FAF6BCD8175E4280009A60D4 /* SearchUsersViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
