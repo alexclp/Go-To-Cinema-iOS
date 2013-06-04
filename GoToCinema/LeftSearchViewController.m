@@ -31,38 +31,6 @@
     return self;
 }
 
-- (void)sendDataToViewController:(WallViewController *)vc
-{
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsDirectory = [paths objectAtIndex:0];
-	
-	NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"data.plist"];
-	NSDictionary *loginData = [[NSDictionary alloc] initWithContentsOfFile:filePath];
-	
-	NSLog(@"user id = %@", [loginData objectForKey:@"user_id"]);
-	
-	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://cinemadistance.eu01.aws.af.cm/user/%@/wall", [loginData objectForKey:@"user_id"]]];
-	NSURLRequest *request = [NSURLRequest requestWithURL:url];
-	AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-		vc.wallInfo = [[NSDictionary alloc] initWithDictionary:(NSDictionary *)JSON];
-		NSLog(@"%@", JSON);
-	} failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-		
-	}];
-	[operation start];
-}
-
-- (NSString *)getMyId
-{
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsDirectory = [paths objectAtIndex:0];
-	
-	NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"data.plist"];
-	NSDictionary *loginData = [[NSDictionary alloc] initWithContentsOfFile:filePath];
-	
-	return [loginData objectForKey:@"user_id"];
-}
-
 #pragma mark UITableView methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
